@@ -2,8 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { Observable } from "rxjs";
 import { select, Store } from "@ngrx/store";
 
-import { Customer } from "./models/customer";
-import { CustomerAdd } from "./root-store/actions/customer.actions";
+import { Customer } from "../../../models/customer.model";
+import { CustomerAdd } from "../../../root-store/actions/customer.actions";
 
 @Component({
   selector: "app-customer-add",

@@ -1,15 +1,14 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
-import { CostomerViewComponent } from "./customer-view/customer-view.component";
-
+import { CustomerOverviewComponent } from "./customer-overview/customer-overview.component";
 const routers: Routes = [
   {
-    path: "",
+    path: "customer",
     children: [
       {
-        path: "/customer-view",
-        component: CostomerViewComponent
+        path: "overview",
+        component: CustomerOverviewComponent
       }
     ]
   }

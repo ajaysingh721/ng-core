@@ -9,6 +9,11 @@ const routes: Routes = [
     loadChildren: () =>
       import("./views/login/login.module").then(m => m.LoginModule)
   },
+  {
+    path: "",
+    loadChildren: () =>
+      import("./views/customer/customer.module").then(m => m.CustomerModule)
+  },
   { path: "**", component: PageNotFoundComponent }
 ];
 
