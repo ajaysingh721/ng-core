@@ -6,6 +6,7 @@ import { AppComponent } from "./app.component";
 import { LoginModule } from "./views/login/login.module";
 import { AppRoutingModule } from "./app-routing.module";
 import { SharedModule } from "./shared/shared.module";
+import { RootStoreModule } from "./root-store/root-store.module";
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { SharedModule } from "./shared/shared.module";
     FormsModule,
     AppRoutingModule,
     LoginModule,
-    SharedModule
+    SharedModule,
+    RootStoreModule
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent]
