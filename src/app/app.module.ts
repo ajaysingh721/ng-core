@@ -7,6 +7,7 @@ import { LoginModule } from "./views/login/login.module";
 import { AppRoutingModule } from "./app-routing.module";
 import { SharedModule } from "./shared/shared.module";
 import { RootStoreModule } from "./root-store/root-store.module";
+import { CustomerModule } from "./views/customer/customer.module";
 
 @NgModule({
   imports: [
@@ -14,6 +15,7 @@ import { RootStoreModule } from "./root-store/root-store.module";
     FormsModule,
     AppRoutingModule,
     LoginModule,
+    CustomerModule,
     SharedModule,
     RootStoreModule
   ],

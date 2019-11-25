@@ -1,3 +1,3 @@
-export class CustomerModel {
+export class Customer {
   name: string;
 }
