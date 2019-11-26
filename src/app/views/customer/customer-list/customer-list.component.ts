@@ -6,11 +6,11 @@ import { Customer } from "../../../models/customer.model";
 import { CustomerRemove } from "../../../root-store/actions/customer.actions";
 
 @Component({
-  selector: "app-customer-view",
-  templateUrl: "./customer-view.component.html",
-  styleUrls: ["./customer-view.component.css"]
+  selector: "app-customer-list",
+  templateUrl: "./customer-list.component.html",
+  styleUrls: ["./customer-list.component.css"]
 })
-export class CustomerViewComponent implements OnInit {
+export class CustomerListComponent implements OnInit {
   customers: Observable<Customer[]>;
   constructor(private store: Store<{ customers: Customer[] }>) {
     this.customers = store.pipe(select("customers"));
