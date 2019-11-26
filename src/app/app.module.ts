@@ -8,11 +8,13 @@ import { AppRoutingModule } from "./app-routing.module";
 import { SharedModule } from "./shared/shared.module";
 import { RootStoreModule } from "./root-store/root-store.module";
 import { CustomerModule } from "./views/customer/customer.module";
+import { CustomerModule } from "./core/core.module";
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
+    CoreModule,
     AppRoutingModule,
     LoginModule,
     CustomerModule,
