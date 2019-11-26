@@ -4,7 +4,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { CustomerOverviewComponent } from "./customer-overview/customer-overview.component";
 const routers: Routes = [
   {
-    path: "customer",
+    path: "",
     children: [
       {
         path: "overview",

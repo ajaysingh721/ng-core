@@ -1,10 +1,17 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
+
 import { AuthLayoutComponent } from "./shared/components/layouts/auth-layout/auth-layout.component";
+import { UserLayoutComponent } from "./shared/components/layouts/user-layout/user-layout.component";
 
 import { PageNotFoundComponent } from "./shared/components/page-not-found/page-not-found.component";
 
 const routes: Routes = [
+  {
+    path: "",
+    redirectTo: "sessions/signin",
+    pathMatch: "full"
+  },
   {
     path: "",
     component: AuthLayoutComponent,
@@ -20,7 +27,8 @@ const routes: Routes = [
     ]
   },
   {
-    path: "",
+    path: "customer",
+    component: UserLayoutComponent,
     loadChildren: () =>
       import("./views/customer/customer.module").then(m => m.CustomerModule)
   },

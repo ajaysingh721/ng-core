@@ -12,8 +12,7 @@ const routes: Routes = [
         path: "signin",
         component: SignInComponent
       },
-      { path: "signout", component: SignOutComponent },
-      { path: "", redirectTo: "/signin", pathMatch: "full" }
+      { path: "signout", component: SignOutComponent }
     ]
   }
 ];
