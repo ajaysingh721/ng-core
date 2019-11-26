@@ -15,7 +15,6 @@ import { CoreModule } from "./core/core.module";
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    CoreModule,
     LoginModule,
     CustomerModule,
     SharedModule,
