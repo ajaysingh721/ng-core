@@ -2,7 +2,10 @@ import { Injectable } from "@angular/core";
 
 @Injectable()
 export class AuthService {
-  getToken(): string {
+  getAccessToken(): string {
+    return "";
+  }
+  getRefreshToken(): string {
     return "";
   }
   isAuthenticated(): boolean {
