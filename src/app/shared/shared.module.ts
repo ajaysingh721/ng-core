@@ -9,6 +9,8 @@ import { AdminLayoutComponent } from "./components/layouts/admin-layout/admin-la
 import { AuthLayoutComponent } from "./components/layouts/auth-layout/auth-layout.component";
 import { UserLayoutComponent } from "./components/layouts/user-layout/user-layout.component";
 
+import { MatToolbarModule } from "@angular/material/toolbar";
+
 const sharedComponents = [
   HeaderComponent,
   FooterComponent,
@@ -18,9 +20,11 @@ const sharedComponents = [
   UserLayoutComponent
 ];
 
+const matModules = [MatToolbarModule];
+
 @NgModule({
   imports: [CommonModule, RouterModule],
   declarations: sharedComponents,
-  exports: sharedComponents
+  exports: sharedComponents.concat(matModules)
 })
 export class SharedModule {}
