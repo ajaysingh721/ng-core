@@ -8,7 +8,7 @@ import { CustomerAdd } from "../../../root-store/actions/customer.actions";
 @Component({
   selector: "app-customer-add",
   templateUrl: "./customer-add.component.html",
-  styleUrls: ["./customer-add.component.css"]
+  styleUrls: ["./customer-add.component.scss"]
 })
 export class CustomerAddComponent implements OnInit {
   customers: Observable<Customer[]>;
