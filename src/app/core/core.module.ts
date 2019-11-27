@@ -4,6 +4,8 @@ import { AuthService } from "./services/auth.service";
 import { TokenInterceptor } from "./interceptors/token.interceptor";
 import { ApiPrefixInterceptor } from "./interceptors/api-prefix.interceptor";
 import { ErrorInterceptor } from "./interceptors/error.interceptor";
+import { AuthGuard } from "./guards/auth.guard";
+import { AdminGuard } from "./guards/admin.guard";
 
 @NgModule({
   providers: [
@@ -22,7 +24,9 @@ import { ErrorInterceptor } from "./interceptors/error.interceptor";
       provide: HTTP_INTERCEPTORS,
       useClass: ErrorInterceptor,
       multi: true
-    }
+    },
+    AuthGuard,
+    AdminGuard
   ]
 })
 export class CoreModule {}
