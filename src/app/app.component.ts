@@ -1,6 +1,8 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, Inject } from "@angular/core";
 import { ThemeService } from "./core/services/theme.service";
 import { Observable } from "rxjs";
+
+import { DOCUMENT } from "@angular/common";
 
 @Component({
   selector: "app-root",
@@ -10,9 +12,13 @@ import { Observable } from "rxjs";
 export class AppComponent implements OnInit {
   isDarkTheme: Observable<boolean>;
 
-  constructor(private themeService: ThemeService) {}
+  constructor(
+    private themeService: ThemeService,
+    @Inject(DOCUMENT) private document: Document
+  ) {}
 
   ngOnInit() {
     this.isDarkTheme = this.themeService.isDarkTheme;
+    console.log(this.document.location.origin);
   }
 }
