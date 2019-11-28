@@ -1,10 +1,10 @@
 import { Injectable, Inject } from "@angular/core";
-import { Subject } from "rxjs";
+import { BehaviorSubject } from "rxjs";
 import { DOCUMENT } from "@angular/common";
 
 @Injectable()
 export class ThemeService {
-  private _theme: Subject<string> = new Subject<string>();
+  private _theme: BehaviorSubject<string> = new BehaviorSubject<string>();
   theme$ = this._theme.asObservable();
 
   constructor(@Inject(DOCUMENT) private document: Document) {
