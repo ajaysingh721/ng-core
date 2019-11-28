@@ -7,7 +7,9 @@ import {
   MatCheckboxModule,
   MatButtonModule,
   MatProgressBarModule,
-  MatIconModule
+  MatIconModule,
+  MatMenuModule,
+  MatToolbarModule
 } from "@angular/material";
 
 @NgModule({
@@ -19,7 +21,9 @@ import {
     MatCheckboxModule,
     MatButtonModule,
     MatProgressBarModule,
-    MatIconModule
+    MatMenuModule,
+    MatIconModule,
+    MatToolbarModule
   ]
 })
 export class SharedMatModule {}
