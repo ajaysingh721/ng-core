@@ -14,10 +14,10 @@ $theme: mat-light-theme($primary, $accent, $warn);
 // Our dark theme
 .web-theme {
   color: $light-primary-text;
-  $dark-primary: mat-palette($mat-green);
+  $dark-primary: mat-palette($mat-yellow);
   $dark-accent: mat-palette($mat-amber, A400, A100, A700);
   $dark-warn: mat-palette($mat-red);
-  $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+  $dark-theme: mat-light-theme($dark-primary, $dark-accent, $dark-warn);
 
   @include angular-material-theme($dark-theme);
 }
