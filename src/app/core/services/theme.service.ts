@@ -14,10 +14,17 @@ export class ThemeService {
 
     switch (thirdLavelDomainName) {
       case "ng-core":
-        this._theme.next({ theme: "hr-theme", logo: "logo2" });
+        this._theme.next({
+          theme: "hr-theme",
+          logo: "https://angular.io/assets/images/logos/angular/angular.svg"
+        });
         break;
       default:
-        this._theme.next({ theme: "web-theme", logo: "logo3" });
+        this._theme.next({
+          theme: "web-theme",
+          logo:
+            "https://angular.io/assets/images/logos/angular/angular_solidBlack.svg"
+        });
     }
   }
 }

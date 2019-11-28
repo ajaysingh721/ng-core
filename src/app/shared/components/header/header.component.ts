@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.themeService.theme$.subscribe(res => {
-      this.logo = `/src/app/assets/images/${res.logo}.png`;
+      this.logo = res.logo;
       console.log(this.logo);
     });
   }
