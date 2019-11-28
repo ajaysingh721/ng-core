@@ -1,14 +1,25 @@
 import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+
 import {
-  MatToolbarModule,
-  MatIconModule,
-  MatSlideToggleModule
+  MatCardModule,
+  MatInputModule,
+  MatCheckboxModule,
+  MatButtonModule,
+  MatProgressBarModule,
+  MatIconModule
 } from "@angular/material";
 
-const matModules = [MatToolbarModule, MatIconModule, MatSlideToggleModule];
-
 @NgModule({
-  imports: matModules,
-  exports: matModules
+  declarations: [],
+  imports: [CommonModule],
+  exports: [
+    MatCardModule,
+    MatInputModule,
+    MatCheckboxModule,
+    MatButtonModule,
+    MatProgressBarModule,
+    MatIconModule
+  ]
 })
 export class SharedMatModule {}
