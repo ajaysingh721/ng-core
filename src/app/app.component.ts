@@ -8,11 +8,14 @@ import { Observable } from "rxjs";
   styleUrls: ["./app.component.scss"]
 })
 export class AppComponent implements OnInit {
-  isDarkTheme: Observable<boolean>;
+  themeName: string;
 
   constructor(private themeService: ThemeService) {}
 
   ngOnInit() {
-    this.isDarkTheme = this.themeService.isDarkTheme;
+    this.themeService.theme$.subscribe(res => {
+      this.themeName = res;
+      console.log(res);
+    });
   }
 }

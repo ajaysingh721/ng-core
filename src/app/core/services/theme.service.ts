@@ -4,11 +4,11 @@ import { DOCUMENT } from "@angular/common";
 
 @Injectable()
 export class ThemeService {
-  private _darkTheme: Subject<boolean> = new Subject<boolean>();
-  isDarkTheme = this._darkTheme.asObservable();
+  private _theme: Subject<string> = new Subject<string>();
+  theme$ = this._theme.asObservable();
 
-  setDarkTheme(isDarkTheme: boolean) {
-    this._darkTheme.next(isDarkTheme);
+  setDarkTheme(name: string) {
+    this._theme.next(name);
   }
 
   constructor(@Inject(DOCUMENT) private document: Document) {
@@ -18,7 +18,7 @@ export class ThemeService {
 
     switch (thirdLavelDomain) {
       case "ng-core":
-        this.setDarkTheme(true);
+        this.setDarkTheme("dark-theme");
         break;
       default:
     }
