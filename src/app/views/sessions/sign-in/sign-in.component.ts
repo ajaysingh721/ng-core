@@ -40,6 +40,6 @@ export class SignInComponent implements OnInit {
     this.submitButton.disabled = true;
     this.progressBar.mode = "indeterminate";
 
-    //this.router.navigate(["dashboard"]);
+    this.router.navigate(["/customer/overview"]);
   }
 }
