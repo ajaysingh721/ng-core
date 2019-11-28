@@ -17,6 +17,7 @@ export class ThemeService {
         this._theme.next("dark-theme");
         break;
       default:
+        this._theme.next("hr-theme");
     }
   }
 }
