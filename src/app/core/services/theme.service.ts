@@ -15,12 +15,14 @@ export class ThemeService {
     switch (thirdLavelDomainName) {
       case "ng-core":
         this._theme.next({
+          name: "Genpact",
           theme: "hr-theme",
           logo: "https://angular.io/assets/images/logos/angular/angular.svg"
         });
         break;
       default:
         this._theme.next({
+          name: "HeadStrong",
           theme: "web-theme",
           logo:
             "https://angular.io/assets/images/logos/angular/angular_solidBlack.svg"

@@ -7,13 +7,13 @@ import { ThemeService } from "../../../core/services/theme.service";
   styleUrls: ["./header.component.css"]
 })
 export class HeaderComponent implements OnInit {
-  logo: string;
+  name: string;
   constructor(private themeService: ThemeService) {}
 
   ngOnInit() {
     this.themeService.theme$.subscribe(res => {
-      this.logo = res.logo;
-      console.log(this.logo);
+      this.name = res.name;
+      console.log(this.name);
     });
   }
 }
