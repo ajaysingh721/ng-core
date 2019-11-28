@@ -29,7 +29,7 @@ export class SignInComponent implements OnInit {
       rememberMe: [false]
     });
     this.themeService.theme$.subscribe(res => {
-      this.logo = res.name;
+      this.logo = res.logo;
     });
   }
 
