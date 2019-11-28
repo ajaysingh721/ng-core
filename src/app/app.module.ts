@@ -8,6 +8,7 @@ import { SharedComponentModule } from "./shared/components/shared-component.modu
 import { RootStoreModule } from "./root-store/root-store.module";
 import { CustomerModule } from "./views/customer/customer.module";
 import { CoreModule } from "./core/core.module";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { CoreModule } from "./core/core.module";
     SessionsModule,
     SharedComponentModule,
     CustomerModule,
-    RootStoreModule
+    RootStoreModule,
+    BrowserAnimationsModule
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent]

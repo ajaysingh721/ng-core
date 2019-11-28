@@ -4,7 +4,7 @@ import { DOCUMENT } from "@angular/common";
 
 @Injectable()
 export class ThemeService {
-  private _theme: BehaviorSubject<string> = new BehaviorSubject<string>();
+  private _theme: BehaviorSubject<any> = new BehaviorSubject<any>();
   theme$ = this._theme.asObservable();
 
   constructor(@Inject(DOCUMENT) private document: Document) {
@@ -14,10 +14,10 @@ export class ThemeService {
 
     switch (thirdLavelDomainName) {
       case "ng-core":
-        this._theme.next("web-theme");
+        this._theme.next({ theme: "hr-theme", logo: "logo2" });
         break;
       default:
-        this._theme.next("hr-theme");
+        this._theme.next({ theme: "web-theme", logo: "logo3" });
     }
   }
 }
