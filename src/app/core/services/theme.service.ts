@@ -14,7 +14,7 @@ export class ThemeService {
 
     switch (thirdLavelDomainName) {
       case "ng-core":
-        this._theme.next("dark-theme");
+        this._theme.next("web-theme");
         break;
       default:
         this._theme.next("hr-theme");
