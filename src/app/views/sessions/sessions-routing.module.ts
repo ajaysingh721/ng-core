@@ -3,6 +3,9 @@ import { Routes, RouterModule } from "@angular/router";
 
 import { SignInComponent } from "./sign-in/sign-in.component";
 import { SignOutComponent } from "./sign-out/sign-out.component";
+import { ResetPasswordComponent } from "./reset-password/reset-password.component";
+import { RegisterComponent } from "./register/register.component";
+
 
 const routes: Routes = [
   {
@@ -12,7 +15,9 @@ const routes: Routes = [
         path: "signin",
         component: SignInComponent
       },
-      { path: "signout", component: SignOutComponent }
+      { path: "signout", component: SignOutComponent },
+      { path: "regisrer", component: SignOutComponent },
+      { path: "reset-password", component: SignOutComponent }
     ]
   }
 ];

@@ -1,5 +1,9 @@
-<div fxLayout="column" fxFlexFill fxLayoutAlign="center">
-  <div> </div>
+<div fxLayout="column" fxLayoutAlign="start" fxFlexFill>
+	<app-header> </app-header>
+	<div fxLayout="row" fxLayoutAlign="center center" fxFlex="">
 		<router-outlet></router-outlet>
-    <div> </div>
+	</div>
+</div>
+<div fxLayout="column" fxLayoutAlign="end">
+	<app-footer></app-footer>
 </div>
