@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { ThemeService } from "../../../core/services/theme.service";
 
 @Component({
   selector: "app-footer",
@@ -6,7 +7,12 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./footer.component.scss"]
 })
 export class FooterComponent implements OnInit {
-  constructor() {}
+  name: string;
+  constructor(private themeService: ThemeService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.themeService.theme$.subscribe(res => {
+      this.name = res.name;
+    });
+  }
 }
