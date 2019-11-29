@@ -10,6 +10,7 @@ import { CustomerModule } from "./views/customer/customer.module";
 import { CoreModule } from "./core/core.module";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
+
 @NgModule({
   imports: [
     BrowserModule,
