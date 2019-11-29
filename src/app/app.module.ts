@@ -9,7 +9,7 @@ import { RootStoreModule } from "./root-store/root-store.module";
 import { CustomerModule } from "./views/customer/customer.module";
 import { CoreModule } from "./core/core.module";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 @NgModule({
   imports: [
@@ -20,7 +20,8 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     SharedComponentModule,
     CustomerModule,
     RootStoreModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FlexLayoutModule
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent]

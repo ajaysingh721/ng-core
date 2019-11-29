@@ -6,7 +6,6 @@ import { SignOutComponent } from "./sign-out/sign-out.component";
 import { SessionsRoutingModule } from "./sessions-routing.module";
 import { SharedMatModule } from "../../shared/shared-mat.module";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { FlexLayoutModule } from "@angular/flex-layout";
 
 @NgModule({
   declarations: [SignInComponent, SignOutComponent],
@@ -15,8 +14,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     SessionsRoutingModule,
     SharedMatModule,
     FormsModule,
-    ReactiveFormsModule,
-    FlexLayoutModule
+    ReactiveFormsModule
   ]
 })
 export class SessionsModule {}
