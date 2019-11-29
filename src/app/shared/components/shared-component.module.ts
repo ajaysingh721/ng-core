@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 import { HeaderComponent } from "./header/header.component";
 import { FooterComponent } from "./footer/footer.component";
@@ -23,7 +24,7 @@ const sharedComponents = [
 ];
 
 @NgModule({
-  imports: [CommonModule, RouterModule, SharedMatModule],
+  imports: [CommonModule, RouterModule, FlexLayoutModule, SharedMatModule],
   declarations: sharedComponents,
   exports: sharedComponents
 })
