@@ -14,7 +14,7 @@ export class SignInComponent implements OnInit {
   @ViewChild(MatButton, { static: false }) submitButton: MatButton;
 
   signinForm: FormGroup;
-  logo: string;
+  user: string;
 
   constructor(
     private fb: FormBuilder,
@@ -29,7 +29,7 @@ export class SignInComponent implements OnInit {
       rememberMe: [false]
     });
     this.themeService.theme$.subscribe(res => {
-      this.logo = res.logo;
+      this.user = res.user;
     });
   }
 

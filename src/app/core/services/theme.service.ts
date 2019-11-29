@@ -17,7 +17,9 @@ export class ThemeService {
         this._theme.next({
           name: "Genpact",
           theme: "hr-theme",
-          logo: "https://angular.io/assets/images/logos/angular/angular.svg"
+          logo:
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Genpact_logo.svg/1200px-Genpact_logo.svg.png",
+          user: "https://image.flaticon.com/icons/svg/17/17004.svg"
         });
         break;
       default:
@@ -25,7 +27,8 @@ export class ThemeService {
           name: "HeadStrong",
           theme: "web-theme",
           logo:
-            "https://angular.io/assets/images/logos/angular/angular_solidBlack.svg"
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Genpact_logo.svg/1200px-Genpact_logo.svg.png",
+          user: "https://image.flaticon.com/icons/svg/17/17004.svg"
         });
     }
   }
