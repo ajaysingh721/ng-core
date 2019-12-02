@@ -10,6 +10,7 @@ import { CustomerModule } from "./views/customer/customer.module";
 import { CoreModule } from "./core/core.module";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { TranslateModule } from "@ngx-translate/core";
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     CustomerModule,
     RootStoreModule,
     BrowserAnimationsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    TranslateModule
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent]
