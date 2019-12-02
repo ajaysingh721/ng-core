@@ -9,7 +9,6 @@ import { TranslateService } from "@ngx-translate/core";
 })
 export class HeaderComponent implements OnInit {
   logo: string;
-  currentLanguage = "en";
   availableLanguages = [
     {
       name: "EN",
@@ -22,6 +21,9 @@ export class HeaderComponent implements OnInit {
       flag: "flag-icon-fr"
     }
   ];
+
+  currentLanguage = this.availableLanguages[0];
+
   constructor(
     private themeService: ThemeService,
     public translate: TranslateService
@@ -34,6 +36,7 @@ export class HeaderComponent implements OnInit {
   }
 
   setLang(lang: any) {
+    this.currentLanguage = lang;
     this.translate.use(lang.code);
   }
 }
