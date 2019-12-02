@@ -15,6 +15,7 @@ export class IncidentFormComponent implements OnInit {
       key: "email",
       type: "input",
       templateOptions: {
+        type: "email",
         label: "Email address",
         placeholder: "Enter email",
         required: true
