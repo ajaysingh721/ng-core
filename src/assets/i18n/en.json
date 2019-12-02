@@ -1,5 +1,6 @@
 {"login": {
-    "username": "Enter your user name",
-    "password": "Enter password here"
+  "title":"Sign in to your account",
+    "username": "Username",
+    "password": "Password"
   }
 }
