@@ -6,7 +6,6 @@ import { SignOutComponent } from "./sign-out/sign-out.component";
 import { ResetPasswordComponent } from "./reset-password/reset-password.component";
 import { RegisterComponent } from "./register/register.component";
 
-
 const routes: Routes = [
   {
     path: "",
@@ -16,8 +15,8 @@ const routes: Routes = [
         component: SignInComponent
       },
       { path: "signout", component: SignOutComponent },
-      { path: "regisrer", component: SignOutComponent },
-      { path: "reset-password", component: SignOutComponent }
+      { path: "signup", component: RegisterComponent },
+      { path: "reset-password", component: ResetPasswordComponent }
     ]
   }
 ];
