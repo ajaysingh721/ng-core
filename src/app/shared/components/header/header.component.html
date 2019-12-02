@@ -2,4 +2,17 @@
 	<mat-toolbar-row>
 		<img [src]="logo" height="50px"/>
 	</mat-toolbar-row>
+  <mat-select 
+      *ngIf="!layoutConf.isMobile"
+      placeholder=""
+      id="langToggle"
+      [style.width]="'auto'"
+      name="currentLang"
+      [(ngModel)]="currentLang" 
+      (selectionChange)="setLang()"
+      class="topbar-button-right">
+        <mat-option 
+        *ngFor="let lang of availableLangs" 
+        [value]="lang.code" ngDefaultControl>{{ lang.name }}</mat-option>
+      </mat-select>
 </mat-toolbar>

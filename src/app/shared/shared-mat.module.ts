@@ -1,4 +1,5 @@
 import { NgModule } from "@angular/core";
+import { FormsModule } from "@angular/forms";
 import { CommonModule } from "@angular/common";
 
 import {
@@ -9,12 +10,13 @@ import {
   MatProgressBarModule,
   MatIconModule,
   MatMenuModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatSelectModule
 } from "@angular/material";
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   exports: [
     MatCardModule,
     MatInputModule,
@@ -23,7 +25,8 @@ import {
     MatProgressBarModule,
     MatMenuModule,
     MatIconModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatSelectModule
   ]
 })
 export class SharedMatModule {}

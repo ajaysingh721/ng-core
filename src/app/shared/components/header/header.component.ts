@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ThemeService } from "../../../core/services/theme.service";
+import { TranslateService } from "@ngx-translate/core";
 
 @Component({
   selector: "app-header",
@@ -8,11 +9,29 @@ import { ThemeService } from "../../../core/services/theme.service";
 })
 export class HeaderComponent implements OnInit {
   logo: string;
-  constructor(private themeService: ThemeService) {}
+  currentLanguage = "en";
+  availableLanguages = [
+    {
+      name: "English",
+      code: "en"
+    },
+    {
+      name: "French",
+      code: "fr"
+    }
+  ];
+  constructor(
+    private themeService: ThemeService,
+    public translate: TranslateService
+  ) {}
 
   ngOnInit() {
     this.themeService.theme$.subscribe(res => {
       this.logo = res.logo;
     });
+  }
+
+  setLang() {
+    this.translate.use(this.currentLanguage);
   }
 }
