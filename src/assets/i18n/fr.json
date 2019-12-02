@@ -2,6 +2,10 @@
   "login": {
     "title": "Connectez-vous à votre compte",
     "username": "Nom d'utilisateur",
-    "password": "Mot de passe"
+    "password": "Mot de passe",
+    "rememberMe":"Souvenez-vous de cet ordinateur",
+    "signin":"se connecter",
+    "forgetPassword":"Mot de passe oublié",
+    "newAccount":"Créer un nouveau compte"
   }
 }
