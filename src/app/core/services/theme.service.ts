@@ -25,7 +25,7 @@ export class ThemeService {
       default:
         this._theme.next({
           name: "HeadStrong",
-          theme: "web-theme",
+          theme: "hr-theme",
           logo:
             "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Genpact_logo.svg/1200px-Genpact_logo.svg.png",
           user: "https://image.flaticon.com/icons/svg/17/17004.svg"
