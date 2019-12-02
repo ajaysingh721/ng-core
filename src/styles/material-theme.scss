@@ -12,7 +12,6 @@
 
 // Our dark theme
 .web-theme {
-  color: $light-primary-text;
   $web-theme-primary: mat-palette($mat-blue-grey);
   $web-theme-accent:  mat-palette($mat-amber, A200, A100, A400);
   $web-theme-warn:    mat-palette($mat-deep-orange);
