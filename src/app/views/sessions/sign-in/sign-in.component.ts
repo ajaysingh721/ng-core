@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { MatProgressBar, MatButton } from "@angular/material";
 import { Router } from "@angular/router";
 import { ThemeService } from "../../../core/services/theme.service";
+import { TranslateService } from "@ngx-translate/core";
 
 @Component({
   selector: "app-sign-in",
@@ -19,8 +20,11 @@ export class SignInComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private router: Router,
-    private themeService: ThemeService
-  ) {}
+    private themeService: ThemeService,
+    public translate: TranslateService
+  ) {
+    this.translate.use("en");
+  }
 
   ngOnInit() {
     this.signinForm = this.fb.group({

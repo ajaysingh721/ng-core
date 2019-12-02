@@ -9,12 +9,10 @@
       name="currentLanguage"
       [(ngModel)]="currentLanguage" 
       (selectionChange)="setLang()"
-      class="topbar-button-right">
+      class="language-button-right">
         <mat-option 
-        *ngFor="let lang of availableLanguage" 
+        *ngFor="let lang of availableLanguages" 
         [value]="lang.code" ngDefaultControl>{{ lang.name }}</mat-option>
       </mat-select>
 	</mat-toolbar-row>
-  
-  
 </mat-toolbar>

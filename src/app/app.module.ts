@@ -26,6 +26,7 @@ import { TranslateModule } from "@ngx-translate/core";
     TranslateModule
   ],
   declarations: [AppComponent],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports:[TranslateModule]
 })
 export class AppModule {}
