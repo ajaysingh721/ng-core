@@ -19,6 +19,7 @@ import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { FormlyModule } from "@ngx-formly/core";
 import { FormlyMaterialModule } from "@ngx-formly/material";
+import { IncidentComponent } from './views/forms/incident/incident.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -46,7 +47,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     FormlyModule.forRoot(),
     FormlyMaterialModule
   ],
-  declarations: [AppComponent],
+  declarations: [AppComponent, IncidentComponent],
   bootstrap: [AppComponent],
   exports: [TranslateModule, FormlyModule, FormlyMaterialModule]
 })
