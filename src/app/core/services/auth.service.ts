@@ -9,7 +9,7 @@ export class AuthService {
     return "";
   }
   isAuthenticated(): boolean {
-    return false;
+    return true;
   }
   hasAdminAccess(): boolean {
     return false;

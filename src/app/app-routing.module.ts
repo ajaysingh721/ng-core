@@ -30,7 +30,8 @@ const routes: Routes = [
     path: "customer",
     component: UserLayoutComponent,
     loadChildren: () =>
-      import("./views/customer/customer.module").then(m => m.CustomerModule)
+      import("./views/customer/customer.module").then(m => m.CustomerModule),
+    data: { title: "Customer" }
   },
   { path: "**", component: PageNotFoundComponent }
 ];

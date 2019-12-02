@@ -8,9 +8,13 @@ import { FormlyMaterialModule } from "@ngx-formly/material";
 const components = [IncidentFormComponent];
 
 @NgModule({
-  imports: [CommonModule, FormsModule, ReactiveFormsModule,
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     FormlyModule.forRoot(),
-    FormlyMaterialModule],
+    FormlyMaterialModule
+  ],
   declarations: components,
   exports: components
 })
