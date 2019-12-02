@@ -5,6 +5,9 @@ import { CustomerAddComponent } from "./customer-add/customer-add.component";
 import { CoustomerRoutingModule } from "./customer-routing.module";
 import { CustomerOverviewComponent } from "./customer-overview/customer-overview.component";
 
+import {DynamicFormsModule} '../../shared/forms/dynamic-forms.module';
+
+
 @NgModule({
   imports: [CommonModule, CoustomerRoutingModule],
   declarations: [
