@@ -8,6 +8,7 @@
   $hr-theme-warn: mat-palette($mat-red);
   $hr-theme: mat-light-theme($hr-theme-primary, $hr-theme-accent, $hr-theme-warn);
   @include angular-material-theme($hr-theme);
+  @include mat-select-theme($hr-theme);
 }
 
 // Our dark theme
@@ -17,4 +18,5 @@
   $web-theme-warn:    mat-palette($mat-deep-orange);
   $web-theme:   mat-light-theme($web-theme-primary, $web-theme-accent, $web-theme-warn);
   @include angular-material-theme($web-theme);
+  @include mat-select-theme($web-theme);
 }
