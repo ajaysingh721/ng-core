@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ResetPasswordComponent } from "./reset-password/reset-password.component";
 import { RegisterComponent } from "./register/register.component";
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { TranslateModule } from "@ngx-translate/core";
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     SharedMatModule,
     FormsModule,
     ReactiveFormsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    TranslateModule
   ]
 })
 export class SessionsModule {}

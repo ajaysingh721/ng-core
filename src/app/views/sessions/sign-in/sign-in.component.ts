@@ -20,11 +20,8 @@ export class SignInComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private router: Router,
-    private themeService: ThemeService,
-    public translate: TranslateService
-  ) {
-    this.translate.use("en");
-  }
+    private themeService: ThemeService
+  ) {}
 
   ngOnInit() {
     this.signinForm = this.fb.group({

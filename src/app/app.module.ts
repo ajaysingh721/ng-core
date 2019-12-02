@@ -10,7 +10,17 @@ import { CustomerModule } from "./views/customer/customer.module";
 import { CoreModule } from "./core/core.module";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FlexLayoutModule } from "@angular/flex-layout";
-import { TranslateModule } from "@ngx-translate/core";
+
+import { HttpClientModule, HttpClient } from "@angular/common/http";
+import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
+import { TranslateHttpLoader } from "@ngx-translate/http-loader";
+import { HttpClientModule, HttpClient } from "@angular/common/http";
+import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
+import { TranslateHttpLoader } from "@ngx-translate/http-loader";
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   imports: [
@@ -23,10 +33,17 @@ import { TranslateModule } from "@ngx-translate/core";
     RootStoreModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    TranslateModule
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
+    HttpClientModule
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent],
-  exports:[TranslateModule]
+  exports: [TranslateModule]
 })
 export class AppModule {}
