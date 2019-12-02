@@ -46,7 +46,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     FormlyModule.forRoot(),
     FormlyMaterialModule
   ],
-  declarations: [AppComponent,],
+  declarations: [AppComponent],
   bootstrap: [AppComponent],
   exports: [TranslateModule, FormlyModule, FormlyMaterialModule]
 })
