@@ -12,12 +12,14 @@ export class HeaderComponent implements OnInit {
   currentLanguage = "en";
   availableLanguages = [
     {
-      name: "English",
-      code: "en"
+      name: "EN",
+      code: "en",
+      flag: "flag-icon-us"
     },
     {
-      name: "French",
-      code: "fr"
+      name: "FR",
+      code: "fr",
+      flag: "flag-icon-fr"
     }
   ];
   constructor(
@@ -31,7 +33,7 @@ export class HeaderComponent implements OnInit {
     });
   }
 
-  setLang() {
-    this.translate.use(this.currentLanguage);
+  setLang(lang: any) {
+    this.translate.use(lang.code);
   }
 }
