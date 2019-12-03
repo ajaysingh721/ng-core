@@ -23,6 +23,7 @@ export class ThemeService implements OnInit {
       .split("//")[1]
       .split(".")[0];
 
+console.log(thirdLavelDomainName);
     switch (thirdLavelDomainName) {
       case "ng-core":
         this.apiService.get<Theme>(1).subscribe(res => {
