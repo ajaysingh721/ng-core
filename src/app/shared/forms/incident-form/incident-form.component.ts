@@ -27,6 +27,7 @@ export class IncidentFormComponent implements OnInit {
   ngOnInit() {
     this.apiService.endpoint = "api/forms";
     this.apiService.getAll().subscribe(res => {
+      debugger;
       this.fields = res;
     });
 
