@@ -13,9 +13,10 @@ import {
   MatToolbarModule,
   MatSelectModule
 } from "@angular/material";
+import { FormatJsonDataPipe } from "./pipes/format-json-data.pipe";
 
 @NgModule({
-  declarations: [],
+  declarations: [FormatJsonDataPipe],
   imports: [CommonModule, FormsModule],
   exports: [
     MatCardModule,

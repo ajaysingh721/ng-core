@@ -13,21 +13,21 @@ import { AdminGuard } from "./guards/admin.guard";
   providers: [
     AuthService,
     APIService,
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: TokenInterceptor,
-      multi: true
-    },
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: TokenInterceptor,
+    //   multi: true
+    // },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: ApiPrefixInterceptor,
       multi: true
     },
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: ErrorInterceptor,
-      multi: true
-    },
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: ErrorInterceptor,
+    //   multi: true
+    // },
     AuthGuard,
     AdminGuard,
     ThemeService
