@@ -15,7 +15,7 @@ export class ThemeService implements OnInit {
     private overlayContainer: OverlayContainer,
     private apiService: APIService<Theme>
   ) {
-    apiService.endpoint = `/theme`;
+    apiService.endpoint = "api/theme";
     const thirdLavelDomainName = this.document.location.origin
       .split("//")[1]
       .split(".")[0];

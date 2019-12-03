@@ -20,15 +20,15 @@ export class APIService<T> {
     return this.http.post<T>(`${this._endpoint}`, payload);
   }
 
-  public  update(id: any, payload: T): Observable<T> {
+  public update(id: any, payload: T): Observable<T> {
     return this.http.put<T>(`${this._endpoint}/${id}`, payload);
   }
 
-  public  remove(id: any): Observable<T> {
+  public remove(id: any): Observable<T> {
     return this.http.delete<T>(`${this._endpoint}/${id}`);
   }
 
-  public  getAll(): Observable<T[]> {
+  public getAll(): Observable<T[]> {
     return this.http.get<T[]>(this._endpoint);
   }
 
