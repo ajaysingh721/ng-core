@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { HTTP_INTERCEPTORS } from "@angular/common/http";
 import { AuthService } from "./services/auth.service";
+import { APIService } from "./services/api.service";
 import { ThemeService } from "./services/theme.service";
 import { TokenInterceptor } from "./interceptors/token.interceptor";
 import { ApiPrefixInterceptor } from "./interceptors/api-prefix.interceptor";
@@ -11,6 +12,7 @@ import { AdminGuard } from "./guards/admin.guard";
 @NgModule({
   providers: [
     AuthService,
+    APIService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,

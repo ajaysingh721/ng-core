@@ -1,31 +1,38 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { environment } from "../../../environments/environment";
+import { Observable } from "rxjs";
 
 @Injectable()
-export class APIService {
-  apiSuffix: string;
-  constructor(apiSuffix: string, private http: HttpClient) {
-    this.apiSuffix = `${environment.API_URL}/${apiSuffix}`;
+export class APIService<T> {
+  private _endpoint: string;
+
+  get endpoint(): string {
+    return this._endpoint;
+  }
+  set endpoint(value: string) {
+    this._endpoint = value;
   }
 
-  create(payload: any): any {
-    return this.http.post(`${this.apiSuffix}`, payload);
+  constructor(private http: HttpClient) {}
+
+  create(payload: T): Observable<T> {
+    return this.http.post<T>(`${this._endpoint}`, payload);
   }
 
-  update(id: any, payload: any): any {
-    return this.http.put(`${this.apiSuffix}/${id}`, payload);
+  update(id: any, payload: T): Observable<T> {
+    return this.http.put<T>(`${this._endpoint}/${id}`, payload);
   }
 
-  remove(id: any): any {
-    return this.http.delete(`${this.apiSuffix}/${id}`);
+  remove(id: any): Observable<T> {
+    return this.http.delete<T>(`${this._endpoint}/${id}`);
   }
 
-  getAll(): any {
-    return this.http.get(this.apiSuffix);
+  getAll(): Observable<T[]> {
+    return this.http.get<T[]>(this._endpoint);
   }
 
-  get(id: any): any {
-    return this.http.get(`${this.apiSuffix}/${id}`);
+  get(id: any): Observable<T> {
+    return this.http.get<T>(`${this._endpoint}/${id}`);
   }
 }

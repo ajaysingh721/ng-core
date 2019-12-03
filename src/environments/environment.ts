@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  API_URL: "http://localhost:55929"
+  API_URL: "https://ng-core.ssessions/api/"
 };
