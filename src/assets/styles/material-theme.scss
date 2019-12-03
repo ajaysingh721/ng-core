@@ -4,7 +4,7 @@
 
 .hr-theme {
   $hr-theme-primary: mat-palette($mat-blue-grey,400);
-  $hr-theme-accent: mat-palette($mat-amber, A200, A100, A400);
+  $hr-theme-accent: mat-palette($mat-pink, A200, A100, A400);
   $hr-theme-warn: mat-palette($mat-red);
   $hr-theme: mat-light-theme($hr-theme-primary, $hr-theme-accent, $hr-theme-warn);
   @include angular-material-theme($hr-theme);
