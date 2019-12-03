@@ -52,15 +52,12 @@ export class IncidentFormComponent implements OnInit {
       hideExpression: "!model.email"
     },
     {
-      key: "password1",
-      type: "input",
+      key: "rememberMe",
+      type: "checkbox",
       templateOptions: {
         label: "Enter password",
-        type: "password",
-        required: true,
-        pattern: /^[1-9]/
-      },
-      hideExpression: "!model.email"
+        required: true
+      }
     }
   ];
 
