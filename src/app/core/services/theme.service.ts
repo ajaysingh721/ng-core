@@ -17,6 +17,8 @@ export class ThemeService {
   ) {
     apiService.endpoint = `${environment.API_URL}/theme`;
 
+    console.log(apiService.endpoint);
+
     const thirdLavelDomainName = this.document.location.origin
       .split("//")[1]
       .split(".")[0];
