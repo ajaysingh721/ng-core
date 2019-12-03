@@ -4,7 +4,7 @@ import { ThemeDb } from "./themes";
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     return {
-      themes: ThemeDb.themes;
+      themes: ThemeDb.;
     };
   }
 }
