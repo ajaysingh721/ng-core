@@ -1,4 +1,4 @@
-import { Injectable, Inject } from "@angular/core";
+import { Injectable, Inject, OnInit } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
 import { DOCUMENT } from "@angular/common";
 import { OverlayContainer } from "@angular/cdk/overlay";
@@ -7,27 +7,31 @@ import { Theme } from "../../models/theme.model";
 import { environment } from "../../../environments/environment";
 
 @Injectable()
-export class ThemeService {
+export class ThemeService implements OnInit {
   private _theme: BehaviorSubject<any> = new BehaviorSubject<any>();
   theme$ = this._theme.asObservable();
   constructor(
     @Inject(DOCUMENT) private document: Document,
-    overlayContainer: OverlayContainer,
-    apiService: APIService<Theme>
+    private overlayContainer: OverlayContainer,
+    private apiService: APIService<Theme>
   ) {
-    apiService.endpoint = `${environment.API_URL}/theme`;
+    apiService.endpoint = `/theme`;
+  }
 
-    console.log(apiService.endpoint);
-
+  ngOnInit() {
     const thirdLavelDomainName = this.document.location.origin
       .split("//")[1]
       .split(".")[0];
 
     switch (thirdLavelDomainName) {
       case "ng-core":
-        overlayContainer.getContainerElement().classList.add("web-theme");
+        this.apiService.get<Theme>(1).subscribe(res => {
+          //this._theme.next(res);
+          console.log(res);
+        });
+        this.overlayContainer.getContainerElement().classList.add("web-theme");
         break;
-        overlayContainer.getContainerElement().classList.add("hr-theme");
+        this.overlayContainer.getContainerElement().classList.add("hr-theme");
     }
   }
 }
