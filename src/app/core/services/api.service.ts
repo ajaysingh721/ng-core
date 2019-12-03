@@ -29,7 +29,7 @@ export class APIService<T> {
   }
 
   public getAll(): Observable<T[]> {
-    return this.http.get<T[]>(this._endpoint, { responseType: "json" });
+    return this.http.get<T[]>(this._endpoint);
   }
 
   public get(id: any): Observable<T> {
