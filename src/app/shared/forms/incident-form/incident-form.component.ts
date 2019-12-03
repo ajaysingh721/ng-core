@@ -38,11 +38,13 @@ export class IncidentFormComponent implements OnInit {
       }
     },
     {
-      key: "iLikeTwix1",
+      key: "password",
       type: "input",
       templateOptions: {
-        label: "I like twix",
-        type: "password"
+        label: "Enter password",
+        type: "password",
+        required: true,
+        pattern: /^[1-9]/,
       },
       hideExpression: "!model.email"
     }
