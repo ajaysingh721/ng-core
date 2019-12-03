@@ -9,7 +9,12 @@ import { FormlyFieldConfig } from "@ngx-formly/core";
 })
 export class IncidentFormComponent implements OnInit {
   form = new FormGroup({});
-  model = { email: "email@gmail.com" };
+  model = {
+    email: "email@gmail.com",
+    select: "",
+    password: "",
+    rememberMe: ""
+  };
   fields: FormlyFieldConfig[] = [
     {
       key: "email",
@@ -22,7 +27,7 @@ export class IncidentFormComponent implements OnInit {
       }
     },
     {
-      key: "Select",
+      key: "select",
       type: "select",
       templateOptions: {
         label: "Select",
@@ -46,7 +51,7 @@ export class IncidentFormComponent implements OnInit {
         required: true,
         pattern: /^[1-9]/,
         blur: function() {
-          alert();
+          // alert();
         }
       },
       hideExpression: "!model.email"
@@ -55,14 +60,13 @@ export class IncidentFormComponent implements OnInit {
       key: "rememberMe",
       type: "checkbox",
       templateOptions: {
-        label: "Enter password",
-        required: true
+        label: "Rememer Me?"
       }
     }
   ];
 
   submit(model) {
-    console.log(model);
+    alert(JSON.stringify(model));
   }
 
   constructor() {}
