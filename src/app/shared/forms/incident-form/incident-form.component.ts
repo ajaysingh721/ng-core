@@ -45,6 +45,20 @@ export class IncidentFormComponent implements OnInit {
         type: "password",
         required: true,
         pattern: /^[1-9]/,
+        blur: function() {
+          alert();
+        }
+      },
+      hideExpression: "!model.email"
+    },
+    {
+      key: "password1",
+      type: "input",
+      templateOptions: {
+        label: "Enter password",
+        type: "password",
+        required: true,
+        pattern: /^[1-9]/
       },
       hideExpression: "!model.email"
     }
