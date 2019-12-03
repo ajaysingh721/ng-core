@@ -3,7 +3,8 @@ import { BehaviorSubject } from "rxjs";
 import { DOCUMENT } from "@angular/common";
 import { OverlayContainer } from "@angular/cdk/overlay";
 import { APIService } from "./api.service";
-import { APIService } from "./api.service";
+import { Theme } from "../../models/theme.model";
+import { environment } from "../../../environments/environment";
 
 @Injectable()
 export class ThemeService {
@@ -14,6 +15,8 @@ export class ThemeService {
     overlayContainer: OverlayContainer,
     apiService: APIService<Theme>
   ) {
+    apiService.endpoint = `${environment.API_URL}/theme`;
+
     const thirdLavelDomainName = this.document.location.origin
       .split("//")[1]
       .split(".")[0];

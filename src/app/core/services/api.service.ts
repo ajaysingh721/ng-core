@@ -7,10 +7,10 @@ import { Observable } from "rxjs";
 export class APIService<T> {
   private _endpoint: string;
 
-  get endpoint(): string {
+  public get endpoint(): string {
     return this._endpoint;
   }
-  set endpoint(value: string) {
+  public set endpoint(value: string) {
     this._endpoint = value;
   }
 

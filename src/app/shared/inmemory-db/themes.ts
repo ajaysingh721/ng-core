@@ -1,7 +1,8 @@
 import { Theme } from "../../models/theme.model";
 export class ThemeDb {
-  public themes: Theme[] = [
+  themes: Theme[] = [
     {
+      id: 1,
       name: "Genpact",
       theme: "web-theme",
       logo:
@@ -9,6 +10,7 @@ export class ThemeDb {
       user: "https://image.flaticon.com/icons/svg/17/17004.svg"
     },
     {
+      id: 2,
       name: "HeadStrong",
       theme: "hr-theme",
       logo:
