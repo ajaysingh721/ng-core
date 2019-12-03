@@ -16,23 +16,23 @@ export class APIService<T> {
 
   constructor(private http: HttpClient) {}
 
-  create(payload: T): Observable<T> {
+  public create(payload: T): Observable<T> {
     return this.http.post<T>(`${this._endpoint}`, payload);
   }
 
-  update(id: any, payload: T): Observable<T> {
+  public  update(id: any, payload: T): Observable<T> {
     return this.http.put<T>(`${this._endpoint}/${id}`, payload);
   }
 
-  remove(id: any): Observable<T> {
+  public  remove(id: any): Observable<T> {
     return this.http.delete<T>(`${this._endpoint}/${id}`);
   }
 
-  getAll(): Observable<T[]> {
+  public  getAll(): Observable<T[]> {
     return this.http.get<T[]>(this._endpoint);
   }
 
-  get(id: any): Observable<T> {
+  public get(id: any): Observable<T> {
     return this.http.get<T>(`${this._endpoint}/${id}`);
   }
 }

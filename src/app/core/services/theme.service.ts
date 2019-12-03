@@ -16,14 +16,11 @@ export class ThemeService implements OnInit {
     private apiService: APIService<Theme>
   ) {
     apiService.endpoint = `/theme`;
-  }
-
-  ngOnInit() {
     const thirdLavelDomainName = this.document.location.origin
       .split("//")[1]
       .split(".")[0];
 
-console.log(thirdLavelDomainName);
+    console.log(thirdLavelDomainName);
     switch (thirdLavelDomainName) {
       case "ng-core":
         this.apiService.get<Theme>(1).subscribe(res => {
