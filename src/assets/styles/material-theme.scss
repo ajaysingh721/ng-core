@@ -3,20 +3,18 @@
 @include mat-core();
 
 .hr-theme {
-  $hr-theme-primary: mat-palette($mat-blue-grey);
+  $hr-theme-primary: mat-palette($mat-blue-grey,400);
   $hr-theme-accent: mat-palette($mat-blue-grey, A200, A100, A400);
   $hr-theme-warn: mat-palette($mat-red);
   $hr-theme: mat-light-theme($hr-theme-primary, $hr-theme-accent, $hr-theme-warn);
   @include angular-material-theme($hr-theme);
-  @include mat-select-theme($hr-theme);
 }
 
 // Our dark theme
 .web-theme {
-  $web-theme-primary: mat-palette($mat-indigo);
+  $web-theme-primary: mat-palette($mat-indigo,400);
   $web-theme-accent:  mat-palette($mat-amber, A200, A100, A400);
   $web-theme-warn:    mat-palette($mat-deep-orange);
   $web-theme:   mat-light-theme($web-theme-primary, $web-theme-accent, $web-theme-warn);
   @include angular-material-theme($web-theme);
-  @include mat-select-theme($web-theme);
 }
