@@ -28,14 +28,14 @@ export class IncidentFormComponent implements OnInit {
     },
     {
       key: "select",
-      type: "select",
+      type: "radio",
       templateOptions: {
         label: "Select",
         placeholder: "Placeholder",
         description: "Description",
         required: true,
         options: [
-          { value: 1, label: "Option 1" },
+          { value: 1, label: "Option 3" },
           { value: 2, label: "Option 2" },
           { value: 3, label: "Option 3" },
           { value: 4, label: "Option 4" }
@@ -46,7 +46,7 @@ export class IncidentFormComponent implements OnInit {
       key: "password",
       type: "input",
       templateOptions: {
-        label: "Enter password",
+        label: "Enter txt",
         type: "password",
         required: true,
         pattern: /^[1-9]/,
@@ -55,13 +55,6 @@ export class IncidentFormComponent implements OnInit {
         }
       },
       hideExpression: "!model.email"
-    },
-    {
-      key: "rememberMe",
-      type: "checkbox",
-      templateOptions: {
-        label: "Rememer Me?"
-      }
     }
   ];
 
@@ -71,5 +64,16 @@ export class IncidentFormComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    var tt = [
+      {
+        key: "password",
+        type: "select",
+        label: "Enter txt",
+        required: true,
+        minLegth: 2,
+        options: ["option1", "option2", "option2"]
+      }
+    ];
+  }
 }
