@@ -1,12 +1,12 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { IncidentFormComponent } from "./incident-form/incident-form.component";
+import { FormlyFormComponent } from "./formly-form/formly-form.component";
 import { FormlyModule } from "@ngx-formly/core";
 import { FormlyMaterialModule } from "@ngx-formly/material";
 import { SharedMatModule } from "../shared-mat.module";
 
-const components = [IncidentFormComponent];
+const components = [FormlyFormComponent];
 
 @NgModule({
   imports: [
