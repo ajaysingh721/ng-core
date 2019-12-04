@@ -7,7 +7,8 @@ import { InMemoryDataService } from "./inmemory-db.service";
   imports: [
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
-      passThruUnknownUrl: true
+      passThruUnknownUrl: true,
+      dataEncapsulation:false
     })
   ]
 })
