@@ -10,8 +10,6 @@ import { APIService } from "../../../core/services/api.service";
 })
 export class IncidentFormComponent implements OnInit {
   form = new FormGroup({});
-  modelData: any;
-  fieldsData: FormlyFieldConfig[];
   @Input() models: any = {};
   @Input() fields: FormlyFieldConfig[] = [];
   @Output() onFormSubmit = new EventEmitter<any>();
@@ -22,8 +20,5 @@ export class IncidentFormComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {
-    this.fieldsData = this.fields;
-    this.modelData = this.models;
-  }
+  ngOnInit() {}
 }
