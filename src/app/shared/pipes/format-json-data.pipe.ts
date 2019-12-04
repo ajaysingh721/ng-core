@@ -6,5 +6,19 @@ import { FormlyFieldConfig } from "@ngx-formly/core";
 })
 export class FormatJsonDataPipe implements PipeTransform {
   jsondata: FormlyFieldConfig[];
-  transform(value: any, args?: any): any {}
+  transform(value: any, args?: any): any {
+    let result = [
+      {
+        key: "email",
+        type: "input",
+        templateOptions: {
+          type: "email",
+          label: "Email address",
+          placeholder: "Enter email",
+          required: true
+        }
+      }
+    ];
+    return ;
+  }
 }
