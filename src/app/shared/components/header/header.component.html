@@ -1,16 +1,18 @@
 <mat-toolbar color="primary">
 	<mat-toolbar-row>
 		<img [src]="logo" height="50px"/>
+		<ng-content select=".addition-items-prepend"></ng-content>
 		<span fxFlex></span>
 		<button mat-button [matMenuTriggerFor]="menu">
-    <span class="flag-icon {{currentLanguage.flag}} mr-05"></span>
-    <span>{{currentLanguage.name}}</span>
-  </button>
+      <span class="flag-icon {{currentLanguage.flag}} mr-05"></span>
+      <span>{{currentLanguage.name}}</span>
+     </button>
 		<mat-menu #menu="matMenu">
 			<button mat-menu-item *ngFor="let lang of availableLanguages" (click)="setLang(lang)">
         <span class="flag-icon mr-05 {{lang.flag}}"></span>
         <span>{{lang.name}}</span>
-  </button>
+      </button>
 		</mat-menu>
+		<ng-content select=".addition-items-append"></ng-content>
 	</mat-toolbar-row>
 </mat-toolbar>

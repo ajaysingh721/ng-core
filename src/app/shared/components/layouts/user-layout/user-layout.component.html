@@ -1,3 +1,32 @@
-<app-header>
-	<router-outlet></router-outlet>
-</app-header>
+<div class="fixed-height">
+	<div fxLayout="column" fxLayoutAlign="start" fxFlexFill>
+		<app-header> 
+      <div class="addition-items-prepend">
+		<mat-menu #menu="matMenu">
+			<button mat-menu-item *ngFor="let lang of availableLanguages" (click)="setLang(lang)">
+        <span class="flag-icon mr-05 {{lang.flag}}"></span>
+        <span>{{lang.name}}</span>
+      </button>
+		</mat-menu>
+	</div>
+	<div class="addition-items-append">
+		<mat-menu #appMenu="matMenu">
+			<ng-template matMenuContent>
+				<button mat-menu-item>Settings</button>
+				<button mat-menu-item>Help</button>
+			</ng-template>
+		</mat-menu>
+
+		<button mat-icon-button [matMenuTriggerFor]="appMenu">
+  <mat-icon>more_vert</mat-icon>
+</button>
+	</div>
+    </app-header>
+		<div fxLayout="row" fxLayoutAlign="center center" fxFlex="">
+			<router-outlet></router-outlet>
+		</div>
+	</div>
+	<div fxLayout="column" fxLayoutAlign="end">
+		<app-footer></app-footer>
+	</div>
+</div>
