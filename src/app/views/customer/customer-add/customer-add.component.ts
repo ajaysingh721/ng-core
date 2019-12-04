@@ -33,7 +33,7 @@ export class CustomerAddComponent implements OnInit {
   ngOnInit() {
     this.apiService.endpoint = "api/forms";
     this.apiService.getAll().subscribe(res => {
-      this.formFields = this.formatter.teansform(res);
+      this.formFields = this.formatter.transform(res);
     });
   }
 }

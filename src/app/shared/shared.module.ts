@@ -7,12 +7,18 @@ import { DynamicFormsModule } from "./forms/dynamic-forms.module";
 
 @NgModule({
   declarations: [FormatJsonPipe],
-  imports: [CommonModule, SharedComponentModule, SharedMatModule,],
+  imports: [
+    CommonModule,
+    SharedComponentModule,
+    SharedMatModule,
+    DynamicFormsModule
+  ],
   exports: [
     FormatJsonPipe,
     SharedMatModule,
     SharedComponentModule,
     DynamicFormsModule
-  ]
+  ],
+  providers: [FormatJsonPipe]
 })
 export class SharedModule {}

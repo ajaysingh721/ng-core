@@ -25,14 +25,12 @@ export class InMemoryDataService implements InMemoryDbService {
       ],
       forms: [
         {
-          key: "email",
-          type: "input",
-          templateOptions: {
-            type: "email",
-            label: "Email address",
-            placeholder: "Enter email",
-            required: true
-          }
+          ControlName: "email",
+          ControlType: "input",
+          SybType: "email",
+          ControlLabel: "Email address",
+          Placeholder: "Enter email",
+          IsRequired: true
         }
       ]
     };
