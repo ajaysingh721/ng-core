@@ -4,7 +4,7 @@ import { FormlyFieldConfig } from "@ngx-formly/core";
 @Pipe({
   name: "formData"
 })
-export class FormatJsonDataPipe implements PipeTransform {
+export class FormatJsonPipe implements PipeTransform {
   jsondata: FormlyFieldConfig[];
   transform(value: any, args?: any): any {
     let result = [
