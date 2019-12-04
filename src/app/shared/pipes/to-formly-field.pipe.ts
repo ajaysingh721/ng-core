@@ -7,8 +7,6 @@ import "automapper-ts";
   name: "toFormlyField"
 })
 export class ToFormlyFieldPipe implements PipeTransform {
-  formlyField: FormlyField;
-  control: Control;
   transform(value: any, args?: any): any {
     // mapping configuration
     automapper
@@ -31,10 +29,6 @@ export class ToFormlyFieldPipe implements PipeTransform {
           opts.mapFrom("ControlLabel")
       );
 
-    return (this.formlyField = automapper.map(
-      "ControlToFormlyField",
-      FormlyField,
-      value
-    ));
+    return automapper.map("ControlToFormlyField", FormlyField, value);
   }
 }
