@@ -4,7 +4,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { AppComponent } from "./app.component";
 import { SessionsModule } from "./views/sessions/sessions.module";
 import { AppRoutingModule } from "./app-routing.module";
-import { SharedComponentModule } from "./shared/components/shared-component.module";
+import { SharedModule } from "./shared/shared.module";
 import { RootStoreModule } from "./root-store/root-store.module";
 import { CustomerModule } from "./views/customer/customer.module";
 import { CoreModule } from "./core/core.module";
@@ -30,7 +30,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppRoutingModule,
     CoreModule,
     SessionsModule,
-    SharedComponentModule,
+    SharedModule,
     CustomerModule,
     RootStoreModule,
     BrowserAnimationsModule,

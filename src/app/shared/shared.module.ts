@@ -3,7 +3,6 @@ import { CommonModule } from "@angular/common";
 import { FormatJsonDataPipe } from "./pipes/format-json-data.pipe";
 import { SharedMatModule } from "./shared-mat.module";
 import { SharedComponentModule } from "./components/shared-component.module";
-import { SharedComponentModule } from ".//shared-component.module";
 
 @NgModule({
   declarations: [FormatJsonDataPipe],
