@@ -31,6 +31,14 @@ export class InMemoryDataService implements InMemoryDbService {
           ControlLabel: "Email address",
           Placeholder: "Enter email",
           IsRequired: true
+        },
+        {
+          ControlName: "phone",
+          ControlType: "input",
+          SybType: "number",
+          ControlLabel: "Phone number",
+          Placeholder: "Enter phone number",
+          IsRequired: true
         }
       ]
     };

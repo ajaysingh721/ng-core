@@ -1,24 +1,40 @@
 import { Pipe, PipeTransform } from "@angular/core";
-import { FormlyFieldConfig } from "@ngx-formly/core";
+import { FormlyField } from "../../models/formlyfield.model";
+import { Control } from "../../models/control.model";
+import "automapper-ts";
 
 @Pipe({
   name: "formData"
 })
 export class FormatJsonPipe implements PipeTransform {
-  jsondata: FormlyFieldConfig[];
+  formlyField: FormlyField;
+  control: Control;
   transform(value: any, args?: any): any {
-    let result = [
-      {
-        key: "email",
-        type: "input",
-        templateOptions: {
-          type: "email",
-          label: "Email address",
-          placeholder: "Enter email",
-          required: true
-        }
-      }
-    ];
-    return result;
+    // mapping configuration
+    automapper
+      .createMap("ControlToFormlyField", FormlyField)
+      // .forMember('fullName', (opts: AutoMapperJs.IMemberConfigurationOptions) => opts.mapFrom('name'))
+      .forMember("key", (opts: AutoMapperJs.IMemberConfigurationOptions) =>
+        opts.mapFrom("ControlName")
+      )
+      .forMember("type", (opts: AutoMapperJs.IMemberConfigurationOptions) =>
+        opts.mapFrom("ControlType")
+      )
+      .forMember(
+        "templateOptions.placeholder",
+        (opts: AutoMapperJs.IMemberConfigurationOptions) =>
+          opts.mapFrom("Placeholder")
+      )
+      .forMember(
+        "templateOptions.label",
+        (opts: AutoMapperJs.IMemberConfigurationOptions) =>
+          opts.mapFrom("ControlLabel")
+      );
+
+    return (this.formlyField = automapper.map(
+      "ControlToFormlyField",
+      FormlyField,
+      value
+    ));
   }
 }
