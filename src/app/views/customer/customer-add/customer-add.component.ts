@@ -1,9 +1,11 @@
 import { Component, OnInit } from "@angular/core";
 import { Observable } from "rxjs";
 import { select, Store } from "@ngrx/store";
+import { FormlyFieldConfig } from "@ngx-formly/core";
 
 import { Customer } from "../../../models/customer.model";
 import { CustomerAdd } from "../../../root-store/actions/customer.actions";
+import { APIService } from "../../../core/services/api.service";
 
 @Component({
   selector: "app-customer-add",
@@ -12,8 +14,12 @@ import { CustomerAdd } from "../../../root-store/actions/customer.actions";
 })
 export class CustomerAddComponent implements OnInit {
   customers: Observable<Customer[]>;
+  formFields: FormlyFieldConfig[];
 
-  constructor(private store: Store<{ customers: Customer[] }>) {
+  constructor(
+    private store: Store<{ customers: Customer[] }>,
+    private apiService: APIService<FormlyFieldConfig>
+  ) {
     this.customers = store.pipe(select("customers"));
   }
 
@@ -23,5 +29,11 @@ export class CustomerAddComponent implements OnInit {
     this.store.dispatch(new CustomerAdd(customer));
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.apiService.endpoint = "api/forms";
+    this.apiService.getAll().subscribe(res => {
+      debugger;
+      this.formFields = res;
+    });
+  }
 }
