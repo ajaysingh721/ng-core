@@ -24,6 +24,6 @@ export class IncidentFormComponent implements OnInit {
 
   ngOnInit() {
     this.fieldsData = this.fields;
-    this.modelData = this.model;
+    this.modelData = this.models;
   }
 }
