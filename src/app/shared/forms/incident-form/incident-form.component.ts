@@ -14,7 +14,9 @@ export class IncidentFormComponent implements OnInit {
   @Output() onFormSubmit = new EventEmitter<any>();
 
   submit(model) {
-    this.onFormSubmit.emit(this.form.value);
+    this.onFormSubmit.emit(model);
+    console.log(model);
+    console.log(this.form.value);
   }
 
   constructor() {}

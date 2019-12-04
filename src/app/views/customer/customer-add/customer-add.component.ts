@@ -6,7 +6,7 @@ import { FormlyFieldConfig } from "@ngx-formly/core";
 import { Customer } from "../../../models/customer.model";
 import { CustomerAdd } from "../../../root-store/actions/customer.actions";
 import { APIService } from "../../../core/services/api.service";
-import { FormatJsonPipe } from "../../../shared/pipes/format-json.pipe";
+import { ToFormlyFieldPipe } from "../../../shared/pipes/to-formly-field.pipe";
 
 @Component({
   selector: "app-customer-add",
@@ -21,7 +21,7 @@ export class CustomerAddComponent implements OnInit {
   constructor(
     private store: Store<{ customers: Customer[] }>,
     private apiService: APIService<FormlyFieldConfig>,
-    private formatter: FormatJsonPipe
+    private toFormlyField: ToFormlyFieldPipe
   ) {
     this.customers = store.pipe(select("customers"));
   }
@@ -33,7 +33,7 @@ export class CustomerAddComponent implements OnInit {
   ngOnInit() {
     this.apiService.endpoint = "api/forms";
     this.apiService.getAll().subscribe(res => {
-      this.formFields = this.formatter.transform(res);
+      this.formFields = this.toFormlyField.transform(res);
     });
   }
 }

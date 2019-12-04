@@ -4,9 +4,9 @@ import { Control } from "../../models/control.model";
 import "automapper-ts";
 
 @Pipe({
-  name: "formData"
+  name: "toFormlyField"
 })
-export class FormatJsonPipe implements PipeTransform {
+export class ToFormlyFieldPipe implements PipeTransform {
   formlyField: FormlyField;
   control: Control;
   transform(value: any, args?: any): any {
