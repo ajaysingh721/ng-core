@@ -19,6 +19,6 @@ export class FormatJsonDataPipe implements PipeTransform {
         }
       }
     ];
-    return ;
+    return result;
   }
 }

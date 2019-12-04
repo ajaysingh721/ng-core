@@ -31,7 +31,6 @@ export class CustomerAddComponent implements OnInit {
   ngOnInit() {
     this.apiService.endpoint = "api/forms";
     this.apiService.getAll().subscribe(res => {
-      debugger;
       this.formFields = res;
     });
   }
