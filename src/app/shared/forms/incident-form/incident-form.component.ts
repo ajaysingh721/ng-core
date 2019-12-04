@@ -12,7 +12,7 @@ export class IncidentFormComponent implements OnInit {
   form = new FormGroup({});
   modelData: any;
   fieldsData: FormlyFieldConfig[];
-  @Input() model: any = {};
+  @Input() models: any = {};
   @Input() fields: FormlyFieldConfig[] = [];
   @Output() onFormSubmit = new EventEmitter<any>();
 
