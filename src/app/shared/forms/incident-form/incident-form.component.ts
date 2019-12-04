@@ -22,7 +22,7 @@ export class IncidentFormComponent implements OnInit {
     alert(JSON.stringify(model));
   }
 
-  constructor(private apiService: APIService) {}
+  constructor(private apiService: APIService<FormlyFieldConfig>) {}
 
   ngOnInit() {
     this.apiService.endpoint = "api/forms";

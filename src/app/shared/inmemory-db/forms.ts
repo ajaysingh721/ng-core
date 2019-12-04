@@ -1,6 +1,7 @@
 import { FormlyFieldConfig } from "@ngx-formly/core";
 
 export class FormDb {
+  constructor() {}
   public forms: FormlyFieldConfig[] = [
     {
       key: "email",
