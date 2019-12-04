@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 import { FormGroup } from "@angular/forms";
 import { FormlyFieldConfig } from "@ngx-formly/core";
-import { APIService } from "../../../core/services/api.service";
 
 @Component({
   selector: "app-incident-form",
@@ -15,7 +14,7 @@ export class IncidentFormComponent implements OnInit {
   @Output() onFormSubmit = new EventEmitter<any>();
 
   submit(model) {
-    this.onFormSubmit.emit(model);
+    this.onFormSubmit.emit(this.form.value);
   }
 
   constructor() {}
