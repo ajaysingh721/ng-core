@@ -33,7 +33,7 @@ const routes: Routes = [
       import("./views/customer/customer.module").then(m => m.CustomerModule),
     data: { title: "Customer" }
   },
-  // { path: "**", component: PageNotFoundComponent }
+  { path: "**", component: PageNotFoundComponent }
 ];
 
 @NgModule({
