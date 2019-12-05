@@ -1,5 +1,5 @@
 export class Items {
-  public ItemsName: string;
+  public ItemName: string;
   public ItemValue: string;
 }
 

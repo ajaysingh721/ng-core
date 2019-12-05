@@ -1,3 +1,18 @@
-import { FormlyFieldConfig } from "@ngx-formly/core";
+export class FormlyField {
+  key: string;
+  type: string;
+  templateOptions: TemplateOptions;
+}
 
-export class FormlyField implements FormlyFieldConfig {}
+export class TemplateOptions {
+  label: string;
+  placeholder: string;
+  description: string;
+  required: boolean;
+  options: Options[];
+}
+
+export class Options {
+  value: string;
+  lable: string;
+}

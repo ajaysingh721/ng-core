@@ -29,14 +29,14 @@ export class ToFormlyFieldPipe implements PipeTransform {
           opts.mapFrom("ControlLabel")
       )
       .forMember(
-        "templateOptions.options.value",
-        (opts: AutoMapperJs.IMemberConfigurationOptions) =>
-          opts.mapFrom("ListItems.ItemValue")
-      )
-      .forMember(
         "templateOptions.options.label",
         (opts: AutoMapperJs.IMemberConfigurationOptions) =>
           opts.mapFrom("ListItems.ItemName")
+      )
+      .forMember(
+        "templateOptions.options.value",
+        (opts: AutoMapperJs.IMemberConfigurationOptions) =>
+          opts.mapFrom("ListItems.ItemV")
       );
     const result = automapper.map(Control, FormlyField, value);
     console.log(result);
