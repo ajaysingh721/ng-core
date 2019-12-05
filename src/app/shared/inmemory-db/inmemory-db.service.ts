@@ -47,11 +47,11 @@ export class InMemoryDataService implements InMemoryDbService {
           ControlLabel: "Please select",
           Placeholder: "Please select",
           IsRequired: true,
-          ControlList: [
-            { value: 1, label: "Option 3" },
-            { value: 2, label: "Option 2" },
-            { value: 3, label: "Option 3" },
-            { value: 4, label: "Option 4" }
+          ListItem: [
+            { ItemValue: 1, ItemLabel: "Option 3" },
+            { ItemValue: 2, ItemLabel: "Option 2" },
+            { ItemValue: 3, ItemLabel: "Option 3" },
+            { ItemValue: 4, ItemLabel: "Option 4" }
           ]
         }
       ]

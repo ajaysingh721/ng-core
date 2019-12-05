@@ -7,10 +7,10 @@ import "automapper-ts";
   name: "toFormlyField"
 })
 export class ToFormlyFieldPipe implements PipeTransform {
-  transform(value: any, args?: any): any {
+  transform(value: Control, args?: any): any {
     // mapping configuration
     automapper
-      .createMap("ControlToFormlyField", FormlyField)
+      .createMap(Control, FormlyField)
       // .forMember('fullName', (opts: AutoMapperJs.IMemberConfigurationOptions) => opts.mapFrom('name'))
       .forMember("key", (opts: AutoMapperJs.IMemberConfigurationOptions) =>
         opts.mapFrom("ControlName")
@@ -29,16 +29,16 @@ export class ToFormlyFieldPipe implements PipeTransform {
           opts.mapFrom("ControlLabel")
       )
       .forMember(
-        "templateOptions.options.label",
-        (opts: AutoMapperJs.IMemberConfigurationOptions) =>
-          opts.mapFrom("ControlList.label")
-      )
-      .forMember(
         "templateOptions.options.value",
         (opts: AutoMapperJs.IMemberConfigurationOptions) =>
-          opts.mapFrom("ControlList.value")
+          opts.mapFrom("ListItems.ItemValue")
+      )
+      .forMember(
+        "templateOptions.options.label",
+        (opts: AutoMapperJs.IMemberConfigurationOptions) =>
+          opts.mapFrom("ListItems.ItemName")
       );
-    const result = automapper.map("ControlToFormlyField", FormlyField, value);
+    const result = automapper.map(Control, FormlyField, value);
     console.log(result);
     return result;
   }
