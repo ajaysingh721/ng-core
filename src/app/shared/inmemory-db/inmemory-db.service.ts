@@ -39,6 +39,20 @@ export class InMemoryDataService implements InMemoryDbService {
           ControlLabel: "Phone number",
           Placeholder: "Enter phone number",
           IsRequired: true
+        },
+        {
+          ControlName: "Dept",
+          ControlType: "select",
+          SybType: "radio",
+          ControlLabel: "Please select",
+          Placeholder: "Please select",
+          IsRequired: true,
+          ControlList: [
+            { value: 1, label: "Option 3" },
+            { value: 2, label: "Option 2" },
+            { value: 3, label: "Option 3" },
+            { value: 4, label: "Option 4" }
+          ]
         }
       ]
     };

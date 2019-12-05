@@ -27,8 +27,19 @@ export class ToFormlyFieldPipe implements PipeTransform {
         "templateOptions.label",
         (opts: AutoMapperJs.IMemberConfigurationOptions) =>
           opts.mapFrom("ControlLabel")
+      )
+      .forMember(
+        "templateOptions.options.label",
+        (opts: AutoMapperJs.IMemberConfigurationOptions) =>
+          opts.mapFrom("ControlList.label")
+      )
+      .forMember(
+        "templateOptions.options.value",
+        (opts: AutoMapperJs.IMemberConfigurationOptions) =>
+          opts.mapFrom("ControlList.value")
       );
-
-    return automapper.map("ControlToFormlyField", FormlyField, value);
+    const result = automapper.map("ControlToFormlyField", FormlyField, value);
+    console.log(result);
+    return result;
   }
 }
