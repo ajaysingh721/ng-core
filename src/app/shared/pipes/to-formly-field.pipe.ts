@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from "@angular/core";
-import { FormlyField } from "../../models/formlyfield.model";
-import { Control } from "../../models/control.model";
+import { FormlyField, Option } from "../../models/formlyfield.model";
+import { Control, Item } from "../../models/control.model";
 import "automapper-ts";
 
 @Pipe({
@@ -24,21 +24,42 @@ export class ToFormlyFieldPipe implements PipeTransform {
           opts.mapFrom("Placeholder")
       )
       .forMember(
-        "templateOptions.label",
+        "templateOptions.options",
         (opts: AutoMapperJs.IMemberConfigurationOptions) =>
-          opts.mapFrom("ControlLabel")
+          opts.mapFrom("ListItems")
       )
       .forMember(
-        "templateOptions.options.label",
+        "templateOptions.options",
         (opts: AutoMapperJs.IMemberConfigurationOptions) =>
-          opts.mapFrom("ListItems.ItemName")
+          opts.mapFrom("ListItems.ItemLabel")
       )
       .forMember(
-        "templateOptions.options.value",
+        "templateOptions.options",
         (opts: AutoMapperJs.IMemberConfigurationOptions) =>
-          opts.mapFrom("ListItems.ItemV")
+          opts.mapFrom("ListItems.ItemValue")
       );
     const result = automapper.map(Control, FormlyField, value);
+
+    // automapper
+    //   .createMap(Item, Option)
+    //   // .forMember('fullName', (opts: AutoMapperJs.IMemberConfigurationOptions) => opts.mapFrom('name'))
+    //   .forMember("label", (opts: AutoMapperJs.IMemberConfigurationOptions) =>
+    //     opts.mapFrom("ItemLabel")
+    //   )
+    //   .forMember("vakue", (opts: AutoMapperJs.IMemberConfigurationOptions) =>
+    //     opts.mapFrom("ItemValue")
+    //   );
+
+    // const resultNew = automapper.map(
+    //   Item,
+    //   Option,
+    //   result.templateOptions.options
+    // );
+
+    // console.log(result.templateOptions);
+
+    // result.templateOptions["options"] = resultNew;
+
     console.log(result);
     return result;
   }

@@ -1,5 +1,5 @@
-export class Items {
-  public ItemName: string;
+export class Item {
+  public ItemLabel: string;
   public ItemValue: string;
 }
 
@@ -10,5 +10,5 @@ export class Control {
   public ControlLabel: string;
   public Placeholder: string;
   public IsRequired: boolean;
-  public ListItems: Items[];
+  public ListItems: Item[];
 }

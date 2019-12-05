@@ -1,18 +1,18 @@
 export class FormlyField {
   key: string;
   type: string;
-  templateOptions: TemplateOptions;
+  templateOptions: TemplateOption;
 }
 
-export class TemplateOptions {
+export class TemplateOption {
   label: string;
   placeholder: string;
   description: string;
   required: boolean;
-  options: Options[];
+  options: Option[];
 }
 
-export class Options {
+export class Option {
   value: string;
   lable: string;
 }
