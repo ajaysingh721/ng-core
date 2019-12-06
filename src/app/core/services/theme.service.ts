@@ -23,14 +23,10 @@ export class ThemeService implements OnInit {
     console.log(thirdLavelDomainName);
     switch (thirdLavelDomainName) {
       case "ng-core":
-        this._theme.next({
-          id: 1,
-          name: "Genpact",
-          theme: "web-theme",
-          logo:
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Genpact_logo.svg/1200px-Genpact_logo.svg.png",
-          user: "https://image.flaticon.com/icons/svg/17/17004.svg"
+        this.apiService.get(1).subscribe(response => {
+          this._theme.next(response);
         });
+
         this.overlayContainer.getContainerElement().classList.add("web-theme");
         break;
         this._theme.next({

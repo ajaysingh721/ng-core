@@ -1,7 +1,7 @@
 export class Theme {
-  id: any;
-  name: string;
-  theme: string;
-  logo: string;
-  user: string;
+  public id: any;
+  public name: string;
+  public theme: string;
+  public logo: string;
+  public user: string;
 }

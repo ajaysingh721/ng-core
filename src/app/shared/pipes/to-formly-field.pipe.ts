@@ -48,7 +48,6 @@ export class ToFormlyFieldPipe implements PipeTransform {
       );
 
     var result = automapper.map(Control, FormlyField, value);
-    console.log(result);
     return result;
   }
 }
