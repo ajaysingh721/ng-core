@@ -7,7 +7,7 @@ import "automapper-ts";
   name: "toFormlyField"
 })
 export class ToFormlyFieldPipe implements PipeTransform {
-  transform(value: Control, args?: any): any {
+  transform(value: Control[], args?: any): any {
     automapper
       .createMap(Control, FormlyField)
       .forMember("key", (opts: AutoMapperJs.IMemberConfigurationOptions) => {

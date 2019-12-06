@@ -14,9 +14,6 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { HttpClientModule, HttpClient } from "@angular/common/http";
 import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
-import { HttpClientModule, HttpClient } from "@angular/common/http";
-import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
-import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 
 import { InMemoryDataModule } from "./shared/inmemory-db/inmemory-db.module";
 

@@ -1,3 +1,4 @@
+import { Control } from "./../../../models/control.model";
 import { Component, OnInit } from "@angular/core";
 import { Observable } from "rxjs";
 import { select, Store } from "@ngrx/store";
@@ -20,7 +21,7 @@ export class CustomerAddComponent implements OnInit {
 
   constructor(
     private store: Store<{ customers: Customer[] }>,
-    private apiService: APIService<FormlyFieldConfig>,
+    private apiService: APIService<Control>,
     private toFormlyField: ToFormlyFieldPipe
   ) {
     this.customers = store.pipe(select("customers"));

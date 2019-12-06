@@ -16,11 +16,6 @@ export class ErrorInterceptor implements HttpInterceptor {
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    return next.handle(req).pipe(
-      tap(evt => {}),
-      catchError(error => {
-        console.log(error);
-      })
-    );
+    return next.handle(req).pipe(tap(evt => {}));
   }
 }

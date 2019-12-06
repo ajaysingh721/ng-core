@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { NavItem } from "../../../models/nav-item.model";
-import { APIService } from "../../../../core/services/api.service";
+import { APIService } from "src/app/core/services/api.service";
+import { NavItem } from "src/app/models/nav-item.model";
 
 @Component({
   selector: "app-user-layout",
@@ -8,7 +8,7 @@ import { APIService } from "../../../../core/services/api.service";
   styleUrls: ["./user-layout.component.scss"]
 })
 export class UserLayoutComponent implements OnInit {
-  constructor(private apiService: APIService) {}
+  constructor(private apiService: APIService<NavItem>) {}
   navItems: NavItem[] = [];
   ngOnInit() {
     this.apiService.endpoint = "api/menues";
