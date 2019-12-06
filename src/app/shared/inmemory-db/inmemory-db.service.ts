@@ -27,7 +27,7 @@ export class InMemoryDataService implements InMemoryDbService {
         {
           ControlName: "email",
           ControlType: "input",
-          SybType: "email",
+          SubType: "email",
           ControlLabel: "Email address",
           Placeholder: "Enter email",
           IsRequired: true
@@ -35,7 +35,7 @@ export class InMemoryDataService implements InMemoryDbService {
         {
           ControlName: "phone",
           ControlType: "input",
-          SybType: "number",
+          SubType: "number",
           ControlLabel: "Phone number",
           Placeholder: "Enter phone number",
           IsRequired: true
@@ -43,15 +43,15 @@ export class InMemoryDataService implements InMemoryDbService {
         {
           ControlName: "Dept",
           ControlType: "select",
-          SybType: "radio",
+          SubType: "radio",
           ControlLabel: "Please select",
           Placeholder: "Please select",
           IsRequired: true,
           ListItems: [
-            { ItemValue: 1, ItemLabel: "Option 3" },
-            { ItemValue: 2, ItemLabel: "Option 2" },
-            { ItemValue: 3, ItemLabel: "Option 3" },
-            { ItemValue: 4, ItemLabel: "Option 4" }
+            { value: 1, label: "Option 3" },
+            { value: 2, label: "Option 2" },
+            { value: 3, label: "Option 3" },
+            { value: 4, label: "Option 4" }
           ]
         }
       ]
