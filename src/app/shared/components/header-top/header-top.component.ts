@@ -3,11 +3,11 @@ import { ThemeService } from "../../../core/services/theme.service";
 import { TranslateService } from "@ngx-translate/core";
 
 @Component({
-  selector: "app-header",
-  templateUrl: "./header.component.html",
-  styleUrls: ["./header.component.scss"]
+  selector: "app-header-top",
+  templateUrl: "./header-top.component.html",
+  styleUrls: ["./header-top.component.scss"]
 })
-export class HeaderComponent implements OnInit {
+export class HeaderTopComponent implements OnInit {
   logo: string;
   availableLanguages = [
     {

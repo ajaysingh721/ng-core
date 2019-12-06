@@ -1,27 +1,58 @@
 <div class="fixed-height">
 	<div fxLayout="column" fxLayoutAlign="start" fxFlexFill>
-		<app-header> 
-      <div class="addition-items-prepend">
-		<mat-menu #menu="matMenu">
-			<button mat-menu-item *ngFor="let lang of availableLanguages" (click)="setLang(lang)">
-        <span class="flag-icon mr-05 {{lang.flag}}"></span>
-        <span>{{lang.name}}</span>
-      </button>
-		</mat-menu>
-	</div>
-	<div class="addition-items-append">
-		<mat-menu #appMenu="matMenu">
-			<ng-template matMenuContent>
-				<button mat-menu-item>Settings</button>
-				<button mat-menu-item>Help</button>
-			</ng-template>
-		</mat-menu>
+		<app-header-top>
+			<div class="addition-items-prepend">
+				<mat-toolbar color="primary">
 
-		<button mat-icon-button [matMenuTriggerFor]="appMenu">
-  <mat-icon>more_vert</mat-icon>
-</button>
-	</div>
-    </app-header>
+					<mat-toolbar-row>
+
+						<mat-toolbar color="primary" class="menu-bar">
+							<span *ngFor="let item of navItems">
+      <!-- Handle branch node buttons here -->
+      <span *ngIf="item.children && item.children.length > 0">
+        <button mat-button [matMenuTriggerFor]="menu.childMenu"
+        [disabled]="item.disabled">
+          {{item.displayName}}
+        </button>
+        <app-menu-item #menu [items]="item.children"></app-menu-item>
+      </span>
+							<!-- Leaf node buttons here -->
+							<span *ngIf="!item.children || item.children.length === 0">
+        <button mat-button color="primary" [routerLink]="item.route">
+          {{item.displayName}}
+        </button>
+      </span>
+							</span>
+						</mat-toolbar>
+
+					</mat-toolbar-row>
+
+				</mat-toolbar>
+				<!-- <mat-menu #menu="matMenu">
+					<button mat-menu-item *ngFor="let lang of availableLanguages" (click)="setLang(lang)">
+            <span class="flag-icon mr-05 {{lang.flag}}"></span>
+            <span>{{lang.name}}</span>
+         </button>
+				</mat-menu> -->
+			</div>
+			<div class="addition-items-append">
+				<mat-menu #appMenu="matMenu">
+					<ng-template matMenuContent>
+						<button mat-menu-item>
+              <mat-icon>notifications_off</mat-icon>
+              <span>Notification</span>
+            </button>
+						<button mat-menu-item>
+              <mat-icon>logout</mat-icon>
+              <span>Sign Out</span>
+            </button>
+					</ng-template>
+				</mat-menu>
+				<button mat-icon-button [matMenuTriggerFor]="appMenu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+			</div>
+		</app-header-top>
 		<div fxLayout="row" fxLayoutAlign="center center" fxFlex="">
 			<router-outlet></router-outlet>
 		</div>

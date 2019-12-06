@@ -1,6 +1,6 @@
 import { Theme } from "../../models/theme.model";
 export class ThemeDb {
-  public themes: Theme[] = [
+  public static themes: Theme[] = [
     {
       id: 1,
       name: "Genpact",
