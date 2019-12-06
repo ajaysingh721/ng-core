@@ -11,7 +11,7 @@
       <!-- Handle branch node buttons here -->
       <span *ngIf="item.children && item.children.length > 0">
         <button mat-button [matMenuTriggerFor]="menu.childMenu"
-        [disabled]="item.disabled">
+        [disabled]="item.disabled" >
           {{item.displayName}}
         </button>
         <app-menu-item #menu [items]="item.children"></app-menu-item>
