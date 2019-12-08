@@ -20,11 +20,10 @@ export class CustomerAddComponent implements OnInit {
   formModels: { email: ""; password: "" };
 
   constructor(
-    private store: Store<{ customers: Customer[] }>,
     private apiService: APIService<Control>,
     private toFormlyField: ToFormlyFieldPipe
   ) {
-    this.customers = store.pipe(select("customers"));
+    //this.customers = store.pipe(select("customers"));
   }
 
   onSubmit(formData: any) {

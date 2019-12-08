@@ -8,9 +8,8 @@ import { environment } from "../../../environments/environment";
 
 @Injectable()
 export class ThemeService {
-  private _theme: BehaviorSubject<Theme> = new BehaviorSubject<Theme>(
-    new Theme()
-  );
+  theme: Theme;
+  private _theme: BehaviorSubject<any> = new BehaviorSubject<any>({});
   theme$ = this._theme.asObservable();
   constructor(
     @Inject(DOCUMENT) private document: Document,
@@ -22,11 +21,9 @@ export class ThemeService {
       .split("//")[1]
       .split(".")[0];
 
-    console.log(thirdLavelDomainName);
     switch (thirdLavelDomainName) {
       case "ng-core":
         this.apiService.get(2).subscribe(response => {
-          debugger;
           this._theme.next(response);
           this.overlayContainer
             .getContainerElement()
@@ -35,7 +32,6 @@ export class ThemeService {
         break;
       default:
         this.apiService.get(1).subscribe(response => {
-          debugger;
           this._theme.next(response);
           this.overlayContainer
             .getContainerElement()
