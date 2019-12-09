@@ -42,7 +42,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     }),
     HttpClientModule,
     InMemoryDataModule,
-    AppStoreModule
+    
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent],
