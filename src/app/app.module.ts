@@ -16,6 +16,7 @@ import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 
 import { InMemoryDataModule } from "./shared/inmemory-db/inmemory-db.module";
+import { AppStoreModule } from "./app-store/app-store.module";
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -40,7 +41,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
     }),
     HttpClientModule,
-    InMemoryDataModule
+    InMemoryDataModule,
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent],
