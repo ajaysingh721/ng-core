@@ -1,11 +1,9 @@
 import { Control } from "./../../../models/control.model";
 import { Component, OnInit } from "@angular/core";
 import { Observable } from "rxjs";
-import { select, Store } from "@ngrx/store";
 import { FormlyFieldConfig } from "@ngx-formly/core";
 
 import { Customer } from "../../../models/customer.model";
-import { CustomerAdd } from "../../../root-store/actions/customer.actions";
 import { APIService } from "../../../core/services/api.service";
 import { ToFormlyFieldPipe } from "../../../shared/pipes/to-formly-field.pipe";
 
@@ -20,7 +18,6 @@ export class CustomerAddComponent implements OnInit {
   formModels: { email: ""; password: "" };
 
   constructor(
-    private store: Store<{ customers: Customer[] }>,
     private apiService: APIService<Control>,
     private toFormlyField: ToFormlyFieldPipe
   ) {
