@@ -1,10 +1,15 @@
 import { Theme } from "./../../models/theme.model";
 import { Injectable, Inject } from "@angular/core";
-import { BehaviorSubject } from "rxjs";
+import { BehaviorSubject, Observable, of } from "rxjs";
 import { DOCUMENT } from "@angular/common";
 import { OverlayContainer } from "@angular/cdk/overlay";
 import { APIService } from "./api.service";
 import { environment } from "../../../environments/environment";
+import {
+  Resolve,
+  RouterStateSnapshot,
+  ActivatedRouteSnapshot
+} from "@angular/router";
 
 @Injectable()
 export class ThemeService {
@@ -16,7 +21,7 @@ export class ThemeService {
     private overlayContainer: OverlayContainer,
     private apiService: APIService<Theme>
   ) {
-    apiService.endpoint = "api/themes";
+    this.apiService.endpoint = "api/themes";
     const thirdLavelDomainName = this.document.location.origin
       .split("//")[1]
       .split(".")[0];

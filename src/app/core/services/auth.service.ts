@@ -1,6 +1,6 @@
 import { HttpHeaders, HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Credentials } from "../../models/credential.model";
+import { Credential } from "../../models/credential.model";
 import { Observable, of, BehaviorSubject } from "rxjs";
 import { Login } from "../../models/login.model";
 import { map } from "rxjs/operators";
@@ -29,9 +29,7 @@ export class AuthService {
    * @return The user credentials.
    */
   login(login: Login): Observable<AuthResponse> {
-    let queryString = `username=${login.username}&password=${
-      login.password
-    }&grant_type=password`;
+    let queryString = `username=${login.username}&password=${login.password}&grant_type=password`;
     let reqHeader = new HttpHeaders({
       "Content-Type": "application/x-www-urlencoded",
       "No-Auth": "True"
@@ -69,7 +67,7 @@ export class AuthService {
    * @return True if the user is authenticated.
    */
   isAuthenticated(): Observable<boolean> {
-    return this.loggedIn.asObservable();
+    return of(true); //this.loggedIn.asObservable();
   }
 
   isAdmin(): Observable<boolean> {
@@ -80,7 +78,7 @@ export class AuthService {
    * Gets the user credentials.
    * @return The user credentials or null if the user is not authenticated.
    */
-  get credentials(): Credentials | null {
+  get credentials(): Credential | null {
     return this._credential;
   }
 

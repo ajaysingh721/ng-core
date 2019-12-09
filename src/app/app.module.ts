@@ -5,7 +5,6 @@ import { AppComponent } from "./app.component";
 import { SessionsModule } from "./views/sessions/sessions.module";
 import { AppRoutingModule } from "./app-routing.module";
 import { SharedModule } from "./shared/shared.module";
-import { RootStoreModule } from "./root-store/root-store.module";
 import { CustomerModule } from "./views/customer/customer.module";
 import { CoreModule } from "./core/core.module";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
@@ -30,7 +29,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     SessionsModule,
     SharedModule,
     CustomerModule,
-    RootStoreModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
     TranslateModule.forRoot({
@@ -42,6 +40,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     }),
     HttpClientModule,
     InMemoryDataModule,
+    AppStoreModule
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent],

@@ -2,19 +2,35 @@ import { Injectable } from "@angular/core";
 import {
   CanActivate,
   ActivatedRouteSnapshot,
-  RouterStateSnapshot
+  RouterStateSnapshot,
+  Router
 } from "@angular/router";
 import { Observable } from "rxjs";
 import { AuthService } from "../services/auth.service";
+import { map, take } from "rxjs/operators";
 
 @Injectable()
 export class AdminGuard implements CanActivate {
-  constructor(private auth: AuthService) {}
+  path: ActivatedRouteSnapshot[];
+  route: ActivatedRouteSnapshot;
+
+  constructor(private router: Router, private auth: AuthService) {}
 
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
-  ): boolean {
-    return this.auth.hasAdminAccess();
+  ): Observable<boolean> {
+    return this.auth.isAdmin().pipe(
+      take(1),
+      map((isAdmin: boolean) => {
+        if (!isAdmin) {
+          this.router.navigate(["/unauthorized"], {
+            queryParams: { returnUrl: state.url }
+          });
+          return false;
+        }
+        return true;
+      })
+    );
   }
 }

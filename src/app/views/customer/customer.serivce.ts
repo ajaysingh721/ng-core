@@ -1,9 +1,9 @@
+import { Customer } from "./../../models/customer.model";
 import { Injectable } from "@angular/core";
 import {
   EntityCollectionServiceBase,
   EntityCollectionServiceElementsFactory
-} from "ngrx-data";
-import { Customer } from "../../models/customer.model";
+} from "@ngrx/data";
 
 @Injectable({ providedIn: "root" })
 export class CustomerService extends EntityCollectionServiceBase<Customer> {

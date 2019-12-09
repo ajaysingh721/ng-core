@@ -10,7 +10,7 @@ export class InMemoryDataService implements InMemoryDbService {
       themes: ThemeDb.themes,
       menues: MenuDb.menus,
       forms: FormDb.forms,
-      customers:
+      customers: CustomerDb.customers
     };
   }
 }
