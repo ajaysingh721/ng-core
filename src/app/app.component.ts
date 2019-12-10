@@ -9,20 +9,18 @@ import { TranslateService } from "@ngx-translate/core";
   styleUrls: ["./app.component.scss"]
 })
 export class AppComponent implements OnInit {
-  themeName: string;
-
-  constructor(
-    private themeService: ThemeService,
-    public translate: TranslateService
-  ) {
-    translate.addLangs(["en", "fr"]);
-    translate.setDefaultLang("en");
-    translate.use("en");
-  }
-
-  ngOnInit() {
-    this.themeService.theme$.subscribe(res => {
-      this.themeName = res.theme;
-    });
-  }
+  // themeName: string;
+  // constructor(
+  //   private themeService: ThemeService,
+  //   public translate: TranslateService
+  // ) {
+  //   translate.addLangs(["en", "fr"]);
+  //   translate.setDefaultLang("en");
+  //   translate.use("en");
+  // }
+  // ngOnInit() {
+  //   // this.themeService.theme$.subscribe(res => {
+  //   //   this.themeName = res.theme;
+  //   // });
+  // }
 }

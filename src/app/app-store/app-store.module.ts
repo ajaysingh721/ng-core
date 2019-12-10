@@ -1,4 +1,4 @@
-import { environment } from "./../../environments/environment.prod";
+import { environment } from "./../../environments/environment";
 import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 import { NgModule } from "@angular/core";
 import { HttpClientModule } from "@angular/common/http";
