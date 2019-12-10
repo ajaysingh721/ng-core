@@ -18,9 +18,9 @@ export class AppComponent implements OnInit {
   //   translate.setDefaultLang("en");
   //   translate.use("en");
   // }
-  // ngOnInit() {
-  //   // this.themeService.theme$.subscribe(res => {
-  //   //   this.themeName = res.theme;
-  //   // });
-  // }
+  ngOnInit() {
+    // this.themeService.theme$.subscribe(res => {
+    //   this.themeName = res.theme;
+    // });
+  }
 }
