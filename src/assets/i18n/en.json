@@ -2,7 +2,7 @@
   "title":"Sign in to your account",
     "username": "Username",
     "password": "Password",
-    "rememberMe":"Remember this computer",
+    "rememberMe":"Remember this computer?",
     "signin":"Sign in",
     "forgetPassword":"Forget password",
     "newAccount":"Create new account"
