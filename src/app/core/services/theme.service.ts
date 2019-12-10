@@ -28,7 +28,7 @@ export class ThemeService {
 
     switch (thirdLavelDomainName) {
       case "ng-core":
-        this.apiService.get(2).subscribe(response => {
+        this.apiService.get(1).subscribe(response => {
           this._theme.next(response);
           this.overlayContainer
             .getContainerElement()
@@ -36,7 +36,7 @@ export class ThemeService {
         });
         break;
       default:
-        this.apiService.get(1).subscribe(response => {
+        this.apiService.get().subscribe(response => {
           this._theme.next(response);
           this.overlayContainer
             .getContainerElement()

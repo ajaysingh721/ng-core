@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { APIService } from "../../../core/services/api.service";
-import { NavItem } from "../../../models/nav-item.model";
+import { APIService } from "../../../../core/services/api.service";
+import { NavItem } from "../../../../models/nav-item.model";
 
 @Component({
   selector: "app-user-layout",

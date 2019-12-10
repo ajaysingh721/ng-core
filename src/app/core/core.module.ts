@@ -8,7 +8,6 @@ import { ApiPrefixInterceptor } from "./interceptors/api-prefix.interceptor";
 import { ErrorInterceptor } from "./interceptors/error.interceptor";
 import { AuthGuard } from "./guards/auth.guard";
 import { AdminGuard } from "./guards/admin.guard";
-import { AppErrorHandler } from "./services/app-error-handler.service";
 
 @NgModule({
   providers: [
@@ -31,11 +30,7 @@ import { AppErrorHandler } from "./services/app-error-handler.service";
     // },
     AuthGuard,
     AdminGuard,
-    ThemeService,
-    {
-      provide: ErrorHandler,
-      useClass: AppErrorHandler
-    }
+    ThemeService
   ]
 })
 export class CoreModule {}
