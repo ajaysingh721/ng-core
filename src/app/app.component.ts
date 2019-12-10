@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Inject } from "@angular/core";
 import { ThemeService } from "./core/services/theme.service";
-import { T } from "./models/theme.model";
+import { Theme } from "./models/theme.model";
 import { Observable } from "rxjs";
 import { TranslateService } from "@ngx-translate/core";
 
