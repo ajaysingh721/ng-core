@@ -3,33 +3,33 @@ import { FormlyFieldConfig } from "@ngx-formly/core";
 export class FormDb {
   public static forms = [
     {
+      ControlName: "name",
+      ControlType: "input",
+      SubType: "text",
+      ControlLabel: "Full Name",
+      Placeholder: "Enter full name",
+      IsRequired: true
+    },
+    {
       ControlName: "email",
       ControlType: "input",
       SubType: "email",
-      ControlLabel: "Email address",
-      Placeholder: "Enter email",
+      ControlLabel: "Email Address",
+      Placeholder: "Enter email address",
       IsRequired: true
     },
     {
-      ControlName: "phone",
-      ControlType: "input",
-      SubType: "number",
-      ControlLabel: "Phone number",
-      Placeholder: "Enter phone number",
-      IsRequired: true
-    },
-    {
-      ControlName: "Dept",
+      ControlName: "dept",
       ControlType: "select",
-      SubType: "radio",
-      ControlLabel: "Please select",
+      SubType: "select",
+      ControlLabel: "Please Select",
       Placeholder: "Please select",
       IsRequired: true,
       ListItems: [
-        { value: 1, label: "Option 3" },
-        { value: 2, label: "Option 2" },
-        { value: 3, label: "Option 3" },
-        { value: 4, label: "Option 4" }
+        { value1: 1, label1: "IT" },
+        { value1: 2, label1: "HR" },
+        { value1: 3, label1: "Account" },
+        { value1: 4, label1: "Security" }
       ]
     }
   ];

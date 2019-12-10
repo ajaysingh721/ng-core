@@ -40,10 +40,16 @@ export class ToFormlyFieldPipe implements PipeTransform {
           opts.mapFrom("ControlLabel");
         }
       )
-      .forSourceMember(
-        "templateOptions.options",
+      .forMember(
+        "templateOptions.options.value",
         (opts: AutoMapperJs.IMemberConfigurationOptions) => {
-          opts.mapFrom("ListItems");
+          opts.mapFrom("ListItems.value1");
+        }
+      )
+      .forMember(
+        "templateOptions.options.label",
+        (opts: AutoMapperJs.IMemberConfigurationOptions) => {
+          opts.mapFrom("ListItems.label1");
         }
       );
 
