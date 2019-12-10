@@ -1,5 +1,5 @@
 <div class="mat-app-background">
-	<div [class]="themeName">
+	<div [class]="(theme$ | async).th">
 		<router-outlet></router-outlet>
 	</div>
 </div>

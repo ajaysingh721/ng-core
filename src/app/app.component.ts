@@ -9,7 +9,7 @@ import { TranslateService } from "@ngx-translate/core";
   styleUrls: ["./app.component.scss"]
 })
 export class AppComponent implements OnInit {
-  themeName: string;
+  theme$: Observable<any>;
   constructor(
     private themeService: ThemeService,
     public translate: TranslateService
@@ -19,8 +19,6 @@ export class AppComponent implements OnInit {
     translate.use("en");
   }
   ngOnInit() {
-    this.themeService.theme$.subscribe(res => {
-      this.themeName = res.theme;
-    });
+    this.theme$ = this.themeService.theme$;
   }
 }

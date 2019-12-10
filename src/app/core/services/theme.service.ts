@@ -30,6 +30,7 @@ export class ThemeService {
       case "ng-core":
         this.apiService.get(1).subscribe(response => {
           this._theme.next(response);
+          debugger;
           this.overlayContainer
             .getContainerElement()
             .classList.add(response.theme);
