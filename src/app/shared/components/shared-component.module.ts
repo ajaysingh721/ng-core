@@ -14,6 +14,8 @@ import { PageNotFoundComponent } from "./page-not-found/page-not-found.component
 import { AdminLayoutComponent } from "./layouts/admin-layout/admin-layout.component";
 import { AuthLayoutComponent } from "./layouts/auth-layout/auth-layout.component";
 import { UserLayoutComponent } from "./layouts/user-layout/user-layout.component";
+import { SidenavSideComponent } from "./sidenav-side/sidenav-side.component";
+import { HeaderComponent } from "./header/header.component";
 
 const sharedComponents = [
   HeaderTopComponent,
@@ -23,7 +25,9 @@ const sharedComponents = [
   AuthLayoutComponent,
   UserLayoutComponent,
   TileComponent,
-  MenuItemComponent
+  MenuItemComponent,
+  SidenavSideComponent,
+  HeaderComponent
 ];
 
 @NgModule({
