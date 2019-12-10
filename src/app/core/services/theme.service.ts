@@ -36,7 +36,7 @@ export class ThemeService {
         });
         break;
       default:
-        this.apiService.get().subscribe(response => {
+        this.apiService.get(2).subscribe(response => {
           this._theme.next(response);
           this.overlayContainer
             .getContainerElement()
