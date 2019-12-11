@@ -9,7 +9,16 @@ import "automapper-ts";
 export class ToFormlyFieldPipe implements PipeTransform {
   transform(value: Control[], args?: any): any {
     automapper
-      .createMap(Control, FormlyField)
+      .createMap("Item", "Option")
+      .forMember("label", (opts: AutoMapperJs.IMemberConfigurationOptions) => {
+        opts.mapFrom("label1");
+      })
+      .forMember("value", (opts: AutoMapperJs.IMemberConfigurationOptions) => {
+        opts.mapFrom("value1");
+      });
+
+    automapper
+      .createMap("Control", "FormlyField")
       .forMember("key", (opts: AutoMapperJs.IMemberConfigurationOptions) => {
         opts.mapFrom("ControlName");
       })
@@ -35,25 +44,35 @@ export class ToFormlyFieldPipe implements PipeTransform {
         }
       )
       .forMember(
+        "templateOptions.required",
+        (opts: AutoMapperJs.IMemberConfigurationOptions) => {
+          opts.mapFrom("IsRequired");
+        }
+      )
+      .forMember(
         "templateOptions.label",
         (opts: AutoMapperJs.IMemberConfigurationOptions) => {
           opts.mapFrom("ControlLabel");
         }
       )
       .forMember(
-        "templateOptions.options.value",
+        "templateOptions.options",
         (opts: AutoMapperJs.IMemberConfigurationOptions) => {
-          opts.mapFrom("ListItems.value1");
+          opts.mapFrom("ListItems");
         }
       )
       .forMember(
-        "templateOptions.options.label",
+        "templateOptions.options",
         (opts: AutoMapperJs.IMemberConfigurationOptions) => {
-          opts.mapFrom("ListItems.label1");
+          return automapper.map(
+            "Item",
+            "Option",
+            opts.sourceObject[opts.sourcePropertyName]
+          );
         }
       );
 
-    var result = automapper.map(Control, FormlyField, value);
+    var result = automapper.map("Control", "FormlyField", value);
     return result;
   }
 }

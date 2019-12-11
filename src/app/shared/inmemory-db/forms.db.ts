@@ -8,7 +8,8 @@ export class FormDb {
       SubType: "text",
       ControlLabel: "Full Name",
       Placeholder: "Enter full name",
-      IsRequired: true
+      IsRequired: true,
+      ListItems: []
     },
     {
       ControlName: "email",
@@ -16,7 +17,8 @@ export class FormDb {
       SubType: "email",
       ControlLabel: "Email Address",
       Placeholder: "Enter email address",
-      IsRequired: true
+      IsRequired: true,
+      ListItems: []
     },
     {
       ControlName: "dept",
