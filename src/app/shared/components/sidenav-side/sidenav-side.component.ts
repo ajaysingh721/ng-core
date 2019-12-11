@@ -3,19 +3,23 @@ import {
   ViewChild,
   ElementRef,
   ViewEncapsulation,
-  AfterViewInit
+  AfterViewInit,
+  Input
 } from "@angular/core";
 
 import { NavService } from "../../core/services/nav.service";
 
+import { NavItem } from "../../../../models/nav-item.model";
+
 @Component({
   selector: "app-sidenav-side",
   templateUrl: "./sidenav-side.component.html",
-  styleUrls: ["./sidenav-side.component.scss"]
+  styleUrls: ["./sidenav-side.component.scss"],
+  encapsulation: ViewEncapsulation.
 })
 export class SidenavSideComponent implements AfterViewInit {
   @ViewChild("sidenav", { static: false }) sideNav: ElementRef;
-  @Inop
+  @Input() sideNavItems: NavItem[];
 
   constructor(private navService: NavService) {}
 

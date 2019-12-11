@@ -10,10 +10,12 @@ import { NavItem } from "../../../../models/nav-item.model";
 export class UserLayoutComponent implements OnInit {
   constructor(private apiService: APIService<NavItem>) {}
   navItems: NavItem[] = [];
+  sideNavItems: NavItem[] = [];
   ngOnInit() {
     this.apiService.endpoint = "api/menues";
     this.apiService.getAll().subscribe(res => {
       this.navItems = res;
+      this.sideNavItems = this.navItems;
     });
   }
 }

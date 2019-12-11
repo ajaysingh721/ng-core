@@ -49,7 +49,7 @@
 		<div fxFlexFill fxShow="false" fxHide.gt-sm>
 			<router-outlet></router-outlet>
 		</div>
-		<!-- <app-sidenav-side></app-sidenav-side> -->
+		<app-sidenav-side [sideNavItems]="sideNavItems"></app-sidenav-side>
 	</div>
 	<div fxLayout="column" fxLayoutAlign="end">
 		<app-footer></app-footer>
