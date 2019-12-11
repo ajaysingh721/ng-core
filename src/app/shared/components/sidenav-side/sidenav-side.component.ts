@@ -1,3 +1,5 @@
+import { NavItem } from "./../../../models/nav-item.model";
+import { NavService } from "./../../../core/services/nav.service";
 import {
   Component,
   ViewChild,
@@ -6,10 +8,6 @@ import {
   AfterViewInit,
   Input
 } from "@angular/core";
-
-import { NavService } from "../../core/services/nav.service";
-
-import { NavItem } from "../../../../models/nav-item.model";
 
 @Component({
   selector: "app-sidenav-side",
@@ -29,6 +27,6 @@ export class SidenavSideComponent implements AfterViewInit {
   }
 
   ngOnInit() {
-    this.navItems =this.sideNavItems
+    this.navItems = this.sideNavItems;
   }
 }

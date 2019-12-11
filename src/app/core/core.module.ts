@@ -8,6 +8,7 @@ import { ApiPrefixInterceptor } from "./interceptors/api-prefix.interceptor";
 import { ErrorInterceptor } from "./interceptors/error.interceptor";
 import { AuthGuard } from "./guards/auth.guard";
 import { AdminGuard } from "./guards/admin.guard";
+import { NavService } from "./services/nav.service";
 
 @NgModule({
   providers: [
@@ -30,7 +31,8 @@ import { AdminGuard } from "./guards/admin.guard";
     // },
     AuthGuard,
     AdminGuard,
-    ThemeService
+    ThemeService,
+    NavService
   ]
 })
 export class CoreModule {}
