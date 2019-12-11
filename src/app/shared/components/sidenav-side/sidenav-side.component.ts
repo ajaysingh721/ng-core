@@ -15,6 +15,7 @@ import { NavService } from "../../core/services/nav.service";
 })
 export class SidenavSideComponent implements AfterViewInit {
   @ViewChild("sidenav", { static: false }) sideNav: ElementRef;
+  @Inop
 
   constructor(private navService: NavService) {}
 

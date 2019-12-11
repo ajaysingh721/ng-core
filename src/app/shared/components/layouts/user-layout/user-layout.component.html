@@ -49,22 +49,7 @@
 		<div fxFlexFill fxShow="false" fxHide.gt-sm>
 			<router-outlet></router-outlet>
 		</div>
-		<mat-sidenav-container fxFlexFill>
-			<mat-sidenav #sidenav>
-				<mat-nav-list>
-					<a (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
-					<a href="#" mat-list-item>Menu Item 1</a>
-					<a href="#" mat-list-item>Menu Item 2</a>
-					<a href="#" mat-list-item>Menu Item 3</a>
-					<a href="#" mat-list-item>Menu Item 4</a>
-					<a href="#" mat-list-item>Menu Item 5</a>
-					<a href="#" mat-list-item>Menu Item 6</a>
-				</mat-nav-list>
-			</mat-sidenav>
-			<mat-sidenav-content fxFlexFill>
-				<router-outlet></router-outlet>
-			</mat-sidenav-content>
-		</mat-sidenav-container>
+		<app-sidenav-side></app-sidenav-side>
 	</div>
 	<div fxLayout="column" fxLayoutAlign="end">
 		<app-footer></app-footer>
