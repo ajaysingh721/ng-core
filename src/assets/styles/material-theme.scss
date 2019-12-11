@@ -1,5 +1,5 @@
 @import "~@angular/material/theming";
-@import "_mixins";
+@import "./_mixins.scss";
 @include mat-core();
 
 .hr-theme {
