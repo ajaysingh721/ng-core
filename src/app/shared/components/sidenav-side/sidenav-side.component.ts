@@ -15,11 +15,12 @@ import { NavItem } from "../../../../models/nav-item.model";
   selector: "app-sidenav-side",
   templateUrl: "./sidenav-side.component.html",
   styleUrls: ["./sidenav-side.component.scss"],
-  encapsulation: ViewEncapsulation.
+  encapsulation: ViewEncapsulation.None
 })
 export class SidenavSideComponent implements AfterViewInit {
   @ViewChild("sidenav", { static: false }) sideNav: ElementRef;
   @Input() sideNavItems: NavItem[];
+  navItems: NavItem[];
 
   constructor(private navService: NavService) {}
 
@@ -27,5 +28,7 @@ export class SidenavSideComponent implements AfterViewInit {
     this.navService.sideNav = this.sideNav;
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.navItems =this.sideNavItems
+  }
 }
