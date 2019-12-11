@@ -14,6 +14,7 @@ import {
   MatSelectModule,
   MatSidenavModule
 } from "@angular/material";
+import { MatListModule } from "@angular/material/list";
 
 @NgModule({
   declarations: [],
@@ -28,7 +29,8 @@ import {
     MatIconModule,
     MatToolbarModule,
     MatSelectModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatListModule
   ]
 })
 export class SharedMatModule {}

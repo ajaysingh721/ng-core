@@ -2,7 +2,7 @@
 	<mat-toolbar-row>
 		<img [src]="logo" height="50px"/>
 		<ng-content select=".addition-items-prepend"></ng-content>
-		<span fxFlex></span>
+		<span class="menu-spacer"></span>
 		<button mat-button [matMenuTriggerFor]="menu">
       <span class="flag-icon {{currentLanguage.flag}} mr-05"></span>
       <span>{{currentLanguage.name}}</span>
