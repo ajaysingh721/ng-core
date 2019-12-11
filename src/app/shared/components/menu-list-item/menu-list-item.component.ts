@@ -7,7 +7,7 @@ import {
   trigger
 } from "@angular/animations";
 import { Router } from "@angular/router";
-import { NavItem } from "../../models/nav-item.model;
+import { NavItem } from "../../models/nav-item.model";
 import { NavService } from "../../core/services/nav.service";
 
 @Component({
