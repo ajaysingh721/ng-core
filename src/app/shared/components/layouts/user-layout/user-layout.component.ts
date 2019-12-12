@@ -1,3 +1,4 @@
+import { NavService } from "./../../../../core/services/nav.service";
 import { Component, OnInit } from "@angular/core";
 import { APIService } from "../../../../core/services/api.service";
 import { NavItem } from "../../../../models/nav-item.model";
@@ -8,7 +9,10 @@ import { NavItem } from "../../../../models/nav-item.model";
   styleUrls: ["./user-layout.component.scss"]
 })
 export class UserLayoutComponent implements OnInit {
-  constructor(private apiService: APIService<NavItem>) {}
+  constructor(
+    private apiService: APIService<NavItem>,
+    public navService: NavService
+  ) {}
   navItems: NavItem[] = [];
   sideNavItems: NavItem[] = [];
   ngOnInit() {

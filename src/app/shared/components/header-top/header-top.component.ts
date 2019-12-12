@@ -1,3 +1,4 @@
+import { NavService } from "./../../../core/services/nav.service";
 import { Component, OnInit } from "@angular/core";
 import { ThemeService } from "../../../core/services/theme.service";
 import { TranslateService } from "@ngx-translate/core";
@@ -26,7 +27,8 @@ export class HeaderTopComponent implements OnInit {
 
   constructor(
     private themeService: ThemeService,
-    public translate: TranslateService
+    public translate: TranslateService,
+    public navService: NavService
   ) {}
 
   ngOnInit() {

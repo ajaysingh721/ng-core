@@ -16,13 +16,14 @@ import {
   encapsulation: ViewEncapsulation.None
 })
 export class SidenavSideComponent implements AfterViewInit {
-  @ViewChild("sidenav", { static: false }) sideNav: ElementRef;
+  @ViewChild("sideNav", { static: false }) sideNav: ElementRef;
   @Input() sideNavItems: NavItem[];
   navItems: NavItem[];
 
   constructor(private navService: NavService) {}
 
   ngAfterViewInit() {
+    debugger;
     this.navService.sideNav = this.sideNav;
   }
 
