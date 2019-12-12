@@ -58,11 +58,27 @@
       flex: 1 1 100%;
     }
   }
-  .version-info {
-    font-size: 8pt;
-    padding: 8px;
-    align-self: flex-end;
+  
+  .mat-list-item.active {
+    background-color: mat-color($hr-theme, 50);
   }
+  &:hover,
+  &:focus {
+    >.mat-list-item:not(.expanded) {
+      background-color: mat-color($hr-theme, 100) !important;
+    }
+  }
+
+.mat-list-item {
+  padding: 8px 0;
+  display: flex;
+  width: auto;
+
+  .routeIcon {
+    margin-right: 40px;
+  }
+}
+  
 }
 
 // Our dark theme
@@ -121,11 +137,25 @@
       flex: 1 1 100%;
     }
   }
-  .version-info {
-    font-size: 8pt;
-    padding: 8px;
-    align-self: flex-end;
+  .mat-list-item.active {
+    background-color: mat-color($web-theme, 50);
   }
+  &:hover,
+  &:focus {
+    >.mat-list-item:not(.expanded) {
+      background-color: mat-color($web-theme, 100) !important;
+    }
+  }
+
+.mat-list-item {
+  padding: 8px 0;
+  display: flex;
+  width: auto;
+
+  .routeIcon {
+    margin-right: 40px;
+  }
+}
 }
 
 @import "~flag-icon-css/css/flag-icon.min.css";

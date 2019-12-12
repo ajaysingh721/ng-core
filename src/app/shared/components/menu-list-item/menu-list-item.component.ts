@@ -13,7 +13,7 @@ import { NavService } from "../../../core/services/nav.service";
 @Component({
   selector: "app-menu-list-item",
   templateUrl: "./menu-list-item.component.html",
-  styleUrls: ["./menu-list-item.component.css"],
+  styleUrls: ["./menu-list-item.component.scss"],
   animations: [
     trigger("indicatorRotate", [
       state("collapsed", style({ transform: "rotate(0deg)" })),
