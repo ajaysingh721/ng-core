@@ -12,7 +12,7 @@
                 [disabled]="item.disabled"
               >
                 {{ item.displayName }}
-                
+                <mat-icon>expand_more</mat-icon>
               </button>
               <app-menu-item #menu [items]="item.children"></app-menu-item>
             </span>
