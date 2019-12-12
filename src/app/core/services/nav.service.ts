@@ -22,4 +22,7 @@ export class NavService {
   public openNav() {
     this.sideNav.open();
   }
+  public toggle() {
+    this.sideNav.toggle();
+  }
 }

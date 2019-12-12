@@ -40,15 +40,16 @@
         <button mat-icon-button [matMenuTriggerFor]="appMenu">
           <mat-icon>account_circle</mat-icon>
         </button>
-        
+        <button
+      mat-icon-button
+      (click)="navService.toggle()"
+      fxShow="true"
+      fxHide.gt-sm
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
       </div>
     </app-header-top>
-    <div fxFlexFill fxShow="false" fxHide.gt-sm>
-      <router-outlet></router-outlet>
-    </div>
-    <app-sidenav-side [sideNavItems]="sideNavItems"></app-sidenav-side>
-  </div>
-  <div fxLayout="column" fxLayoutAlign="end">
-    <app-footer></app-footer>
+    <app-sidenav-side fxFlexFill [sideNavItems]="sideNavItems"></app-sidenav-side>
   </div>
 </div>

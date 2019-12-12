@@ -8,18 +8,19 @@ import { NavItem } from "../../../../models/nav-item.model";
   templateUrl: "./user-layout.component.html",
   styleUrls: ["./user-layout.component.scss"]
 })
-export class UserLayoutComponent implements OnInit,O {
+export class UserLayoutComponent implements OnInit {
+  navItems: NavItem[] = [];
+  sideNavItems: NavItem[] = [];
+
   constructor(
     private apiService: APIService<NavItem>,
     public navService: NavService
   ) {}
-  navItems: NavItem[] = [];
-  sideNavItems: NavItem[] = [];
+
   ngOnInit() {
     this.apiService.endpoint = "api/menues";
     this.apiService.getAll().subscribe(res => {
       this.navItems = res;
-      debugger
       this.sideNavItems = this.navItems;
     });
   }
