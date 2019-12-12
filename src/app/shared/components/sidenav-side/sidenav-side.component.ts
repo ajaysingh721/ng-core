@@ -1,5 +1,5 @@
 import { NavItem } from "./../../../models/nav-item.model";
-import { NavService } from "./../../../core/services/nav.service";
+import { NavService } from ".../../../core/services/nav.service";
 import {
   Component,
   ViewChild,

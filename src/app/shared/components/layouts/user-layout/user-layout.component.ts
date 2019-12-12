@@ -1,4 +1,4 @@
-import { NavService } from "./../../../../core/services/nav.service";
+import { NavService } from "../../../../core/services/nav.service";
 import { Component, OnInit } from "@angular/core";
 import { APIService } from "../../../../core/services/api.service";
 import { NavItem } from "../../../../models/nav-item.model";
