@@ -27,6 +27,7 @@ export class SidenavSideComponent implements AfterViewInit {
   }
 
   ngOnInit() {
+    debugger;
     this.navItems = this.sideNavItems;
   }
 }
