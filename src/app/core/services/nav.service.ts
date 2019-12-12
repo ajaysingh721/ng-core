@@ -20,7 +20,6 @@ export class NavService {
   }
 
   public openNav() {
-    debugger;
     this.sideNav.open();
   }
 }

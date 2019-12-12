@@ -23,7 +23,6 @@ export class SidenavSideComponent implements AfterViewInit {
   constructor(private navService: NavService) {}
 
   ngAfterViewInit() {
-    debugger;
     this.navService.sideNav = this.sideNav;
   }
 
