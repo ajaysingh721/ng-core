@@ -3,7 +3,7 @@
 }
 
 .mb-1{
-  margin-bottom: 1rem;
+  margin-bottom: 1rem!importan;
 }
 
 .text-center{
@@ -41,4 +41,11 @@
 
 .text-muted {
     color: #6c757d!important;
+}
+
+a, a:focus, a:hover {
+    cursor: pointer;
+    text-decoration: none;
+    color: #009ff0;
+    outline: 0;
 }
