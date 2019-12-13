@@ -12,7 +12,8 @@ import {
   MatMenuModule,
   MatToolbarModule,
   MatSelectModule,
-  MatSidenavModule
+  MatSidenavModule,
+  MatBadgeModule
 } from "@angular/material";
 import { MatListModule } from "@angular/material/list";
 
@@ -30,7 +31,8 @@ import { MatListModule } from "@angular/material/list";
     MatToolbarModule,
     MatSelectModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatBadgeModule
   ]
 })
 export class SharedMatModule {}
