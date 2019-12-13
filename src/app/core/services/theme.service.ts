@@ -13,8 +13,8 @@ import {
 
 @Injectable()
 export class ThemeService {
-  theme: Theme;
-  private _theme: BehaviorSubject<any> = new BehaviorSubject<any>({});
+  theme: Theme[];
+  private _theme: BehaviorSubject<Theme[]> = new BehaviorSubject<Theme[]>([]);
   theme$ = this._theme.asObservable();
 
   constructor(
@@ -39,6 +39,6 @@ export class ThemeService {
         });
     }
 
-    this.overlayContainer.getContainerElement().classList.add("web-theme");
+    //this.overlayContainer.getContainerElement().classList.add("light-theme");
   }
 }
