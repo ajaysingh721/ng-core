@@ -11,7 +11,7 @@ import { TranslateService } from "@ngx-translate/core";
   styleUrls: ["./sign-in.component.scss"]
 })
 export class SignInComponent implements OnInit {
-  @ViewChild(MatProgressBar, { static: false }) progressBar: MatProgressBar;
+  // @ViewChild(MatProgressBar, { static: false }) progressBar: MatProgressBar;
   @ViewChild(MatButton, { static: false }) submitButton: MatButton;
 
   signinForm: FormGroup;
@@ -25,8 +25,8 @@ export class SignInComponent implements OnInit {
 
   ngOnInit() {
     this.signinForm = this.fb.group({
-      username: ["703254673", Validators.required],
-      password: ["12345", Validators.required],
+      username: ["", Validators.required],
+      password: ["", Validators.required],
       rememberMe: [false]
     });
     this.themeService.theme$.subscribe(res => {
@@ -39,7 +39,7 @@ export class SignInComponent implements OnInit {
     console.log(signinData);
 
     this.submitButton.disabled = true;
-    this.progressBar.mode = "indeterminate";
+    // this.progressBar.mode = "indeterminate";
 
     this.router.navigate(["/customer/create"], {
       queryParams: { name: "Emon" },
