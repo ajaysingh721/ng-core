@@ -9,15 +9,10 @@ import { PageNotFoundComponent } from "./shared/components/page-not-found/page-n
 const routes: Routes = [
   {
     path: "",
-    redirectTo: "sessions/signin",
-    pathMatch: "full"
-  },
-  {
-    path: "",
     component: AuthLayoutComponent,
     children: [
       {
-        path: "sessions",
+        path: "",
         loadChildren: () =>
           import("./views/sessions/sessions.module").then(
             m => m.SessionsModule
