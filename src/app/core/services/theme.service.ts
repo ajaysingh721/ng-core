@@ -16,7 +16,7 @@ export class ThemeService {
   theme: Theme;
   private _theme: BehaviorSubject<any> = new BehaviorSubject<any>({});
   theme$ = this._theme.asObservable();
-  
+
   constructor(
     @Inject(DOCUMENT) private document: Document,
     private overlayContainer: OverlayContainer,
@@ -39,7 +39,6 @@ export class ThemeService {
         });
     }
 
-    this.overlayContainer.getContainerElement().classList.add("light-theme");
-    this.overlayContainer.getContainerElement().classList.add("dark-theme");
+    this.overlayContainer.getContainerElement().classList.add("web-theme");
   }
 }
