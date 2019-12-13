@@ -289,7 +289,6 @@ $web-theme: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
 
 //Theme Init
 @include angular-material-theme($web-theme);
-
 .theme-dark {
   @include angular-material-theme($altTheme);
 }
