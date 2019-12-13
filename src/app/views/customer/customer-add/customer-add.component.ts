@@ -1,5 +1,6 @@
 import { Control } from "./../../../models/control.model";
 import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
 import { Observable } from "rxjs";
 import { FormlyFieldConfig } from "@ngx-formly/core";
 
@@ -19,7 +20,8 @@ export class CustomerAddComponent implements OnInit {
 
   constructor(
     private apiService: APIService<Control>,
-    private toFormlyField: ToFormlyFieldPipe
+    private toFormlyField: ToFormlyFieldPipe,
+    private activeRoute: ActivatedRoute
   ) {
     //this.customers = store.pipe(select("customers"));
   }
@@ -32,6 +34,10 @@ export class CustomerAddComponent implements OnInit {
     this.apiService.endpoint = "api/forms";
     this.apiService.getAll().subscribe(res => {
       this.formFields = this.toFormlyField.transform(res);
+    });
+
+    this.activeRoute.queryParams.subscribe(params => {
+      console.log(params["name"]);
     });
   }
 }
