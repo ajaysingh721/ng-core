@@ -1,3 +1,5 @@
+
+
 <div class="fixed-height">
 	<div fxLayout="column" fxLayoutAlign="start" fxFlexFill>
 		<app-header-top>
@@ -66,6 +68,11 @@
     </button>
 			</div>
 		</app-header-top>
-		<app-sidenav-side fxFlexFill [sideNavItems]="sideNavItems"></app-sidenav-side>
+		<div fxLayout="row" fxLayoutAlign="center center" fxFlex="">
+				<app-sidenav-side [sideNavItems]="sideNavItems"></app-sidenav-side>
+		</div>
+	</div>
+	<div fxLayout="column" fxLayoutAlign="end">
+		<app-footer></app-footer>
 	</div>
 </div>

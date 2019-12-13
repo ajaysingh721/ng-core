@@ -283,13 +283,13 @@ $mat-warn: (
 $theme-warn: mat-palette($mat-warn, main, lighter, darker);;
 
 $web-theme: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
+.light-theme{
   @include angular-material-theme($web-theme);
-
+}
   $altTheme: mat-dark-theme($theme-primary, $theme-accent, $theme-warn);
 
 //Theme Init
-@include angular-material-theme($web-theme);
-.theme-dark {
+.dark-theme {
   @include angular-material-theme($altTheme);
 }
 
