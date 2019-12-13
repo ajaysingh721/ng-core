@@ -16,6 +16,7 @@ export class ThemeService {
   theme: Theme;
   private _theme: BehaviorSubject<any> = new BehaviorSubject<any>({});
   theme$ = this._theme.asObservable();
+  
   constructor(
     @Inject(DOCUMENT) private document: Document,
     private overlayContainer: OverlayContainer,
@@ -30,18 +31,15 @@ export class ThemeService {
       case "ng-core":
         this.apiService.get(1).subscribe(response => {
           this._theme.next(response);
-          this.overlayContainer
-            .getContainerElement()
-            .classList.add(response.theme);
         });
         break;
       default:
         this.apiService.get(2).subscribe(response => {
           this._theme.next(response);
-          this.overlayContainer
-            .getContainerElement()
-            .classList.add(response.theme);
         });
     }
+
+    this.overlayContainer.getContainerElement().classList.add("light-theme");
+    this.overlayContainer.getContainerElement().classList.add("dark-theme");
   }
 }
