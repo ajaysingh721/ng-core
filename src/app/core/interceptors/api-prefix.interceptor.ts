@@ -6,7 +6,9 @@ import {
   HttpInterceptor
 } from "@angular/common/http";
 import { Observable } from "rxjs";
+
 import { environment } from "../../../environments/environment";
+import { LoaderService } from "../services/loader.service";
 
 export class ApiPrefixInterceptor implements HttpInterceptor {
   intercept(
@@ -21,7 +23,6 @@ export class ApiPrefixInterceptor implements HttpInterceptor {
       });
     }
     req = req.clone({ headers: req.headers.set("Accept", "application/json") });
-
     return next.handle(req);
   }
 }

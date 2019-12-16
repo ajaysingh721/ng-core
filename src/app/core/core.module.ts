@@ -9,6 +9,7 @@ import { ErrorInterceptor } from "./interceptors/error.interceptor";
 import { AuthGuard } from "./guards/auth.guard";
 import { AdminGuard } from "./guards/admin.guard";
 import { NavService } from "./services/nav.service";
+import { LoaderInterceptor } from "./interceptors/loader.interceptor";
 
 @NgModule({
   providers: [
@@ -29,6 +30,11 @@ import { NavService } from "./services/nav.service";
     //   useClass: ErrorInterceptor,
     //   multi: true
     // },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoaderInterceptor,
+      multi: true
+    },
     AuthGuard,
     AdminGuard,
     ThemeService,
