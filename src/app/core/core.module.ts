@@ -10,6 +10,7 @@ import { AuthGuard } from "./guards/auth.guard";
 import { AdminGuard } from "./guards/admin.guard";
 import { NavService } from "./services/nav.service";
 import { LoaderInterceptor } from "./interceptors/loader.interceptor";
+import { LoaderService } from "./services/loader.service";
 
 @NgModule({
   providers: [
@@ -38,7 +39,8 @@ import { LoaderInterceptor } from "./interceptors/loader.interceptor";
     AuthGuard,
     AdminGuard,
     ThemeService,
-    NavService
+    NavService,
+    LoaderService
   ]
 })
 export class CoreModule {}

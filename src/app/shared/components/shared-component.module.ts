@@ -15,7 +15,6 @@ import { AdminLayoutComponent } from "./layouts/admin-layout/admin-layout.compon
 import { AuthLayoutComponent } from "./layouts/auth-layout/auth-layout.component";
 import { UserLayoutComponent } from "./layouts/user-layout/user-layout.component";
 import { SidenavSideComponent } from "./sidenav-side/sidenav-side.component";
-"./layouts/user-layout/user-layout.component";
 import { MenuListItemComponent } from "./menu-list-item/menu-list-item.component";
 import { HeaderComponent } from "./header/header.component";
 import { LoaderComponent } from "./loader/loader.component";
