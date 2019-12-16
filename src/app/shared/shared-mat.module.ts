@@ -14,7 +14,8 @@ import {
   MatSelectModule,
   MatSidenavModule,
   MatBadgeModule,
-  MatProgressSpinnerModule
+  MatProgressSpinnerModule,
+  MatDividerModule
 } from "@angular/material";
 import { MatListModule } from "@angular/material/list";
 
