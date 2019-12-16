@@ -34,6 +34,7 @@ import { MatListModule } from "@angular/material/list";
     MatSidenavModule,
     MatListModule,
     MatBadgeModule,
+    MatProgressSpinnerModule
   ]
 })
 export class SharedMatModule {}
