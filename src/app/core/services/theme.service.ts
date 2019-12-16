@@ -38,6 +38,6 @@ export class ThemeService {
         });
     }
 
-    this.overlayContainer.getContainerElement().classList.add("light-theme");
+    this.overlayContainer.getContainerElement().classList.add("web-theme");
   }
 }
