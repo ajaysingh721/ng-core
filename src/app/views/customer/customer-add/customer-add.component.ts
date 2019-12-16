@@ -41,6 +41,7 @@ export class CustomerAddComponent implements OnInit {
     this.apiService.endpoint = "api/forms";
     this.apiService.getAll().subscribe(res => {
       this.formFields = this.toFormlyField.transform(res);
+      debugger;
       this.renderer.setStyle(this.loadingBar.nativeElement, "display", "");
     });
 
