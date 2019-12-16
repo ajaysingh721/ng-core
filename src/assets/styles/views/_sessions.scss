@@ -46,10 +46,14 @@
     color: #6c757d!important;
 }
 
-a, a:focus, a:hover {
+a, a:focus{
     cursor: pointer;
     text-decoration: none;
     outline: 0;
+    color: #1c9dd9;
+}
+a:hover{
+color: #a3afb2;
 }
 .ml-15{
 margin-left: 15rem;
