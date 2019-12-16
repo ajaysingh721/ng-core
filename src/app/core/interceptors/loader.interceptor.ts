@@ -17,6 +17,10 @@ export class LoaderInterceptor implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
     this.loaderService.show();
-    return next.handle(req).pipe(finalize(() => this.loaderService.hide()));
+    return next.handle(req).pipe(
+      finalize(() => {
+        this.loaderService.hide();
+      })
+    );
   }
 }

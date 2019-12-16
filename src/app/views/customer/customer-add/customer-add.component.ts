@@ -23,12 +23,10 @@ export class CustomerAddComponent implements OnInit {
   customers: Observable<Customer[]>;
   formFields: FormlyFieldConfig[];
   formModels: { email: ""; password: "" };
-  @ViewChild("loadingBar", { static: false }) loadingBar: ElementRef;
   constructor(
     private apiService: APIService<Control>,
     private toFormlyField: ToFormlyFieldPipe,
-    private activeRoute: ActivatedRoute,
-    private renderer: Renderer2
+    private activeRoute: ActivatedRoute
   ) {
     //this.customers = store.pipe(select("customers"));
   }
@@ -41,7 +39,6 @@ export class CustomerAddComponent implements OnInit {
     this.apiService.endpoint = "api/forms";
     this.apiService.getAll().subscribe(res => {
       this.formFields = this.toFormlyField.transform(res);
-      this.renderer.setStyle(this.loadingBar.nativeElement, "display", "");
     });
 
     this.activeRoute.queryParams.subscribe(params => {

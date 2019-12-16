@@ -11,8 +11,10 @@ export class LoaderComponent implements OnInit {
   color = "primary";
   mode = "indeterminate";
   value = 50;
+  isLoading: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
-  ngOnInit() {}
-  isLoading: BehaviorSubject<boolean> = this.loaderService.isLoading;
+  ngOnInit() {
+    this.isLoading = this.loaderService.isLoading;
+  }
   constructor(private loaderService: LoaderService) {}
 }
