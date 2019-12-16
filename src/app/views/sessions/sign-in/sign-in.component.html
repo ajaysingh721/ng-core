@@ -2,7 +2,7 @@
 	<div class="">
 		<mat-card>
 			<mat-card-content>
-				<div  fxLayout="row">
+				<div fxLayout="row" ngClass.xs="hidden">
 
 					<div fxLayout="column" fxLayoutAlign="space-around center" class="m-1">
 						<div>
@@ -13,7 +13,7 @@
 								<img  height="50px" width="228px" src="https://www.chasecooper.com/wp-content/themes/chasecooper/assets/images/chasecooper.png"/>
             </div>
 							</div>
-							<mat-divider [vertical]="true"></mat-divider>
+							<mat-divider  [vertical]="true"></mat-divider>
 							<div class="m-1">
 								<form [formGroup]="signinForm" (ngSubmit)="signin()" style="width:228px">
 									<div class="">
