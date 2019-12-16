@@ -1,18 +1,17 @@
-<div class="dark-theme">
-	<mat-toolbar color="">
-		<mat-toolbar-row>
-			<img [attr.src]="logo" height="50px" />
-			<span fxFlex></span>
-			<ng-content select=".addition-items-prepend"></ng-content>
-			<button mat-button [matMenuTriggerFor]="color">
+<mat-toolbar color="">
+	<mat-toolbar-row>
+		<img [attr.src]="logo" height="50px" />
+		<span fxFlex></span>
+		<ng-content select=".addition-items-prepend"></ng-content>
+		<button mat-button [matMenuTriggerFor]="color">
       <span class="flag-icon {{ currentLanguage.flag }} mr-05"></span>
       <span>{{ currentLanguage.name }}</span>
     </button>
-			<button mat-button [matMenuTriggerFor]="color">
+		<button mat-button [matMenuTriggerFor]="color">
       <mat-icon>format_color_fill</mat-icon>
     </button>
-			<mat-menu #menu="matMenu">
-				<button
+		<mat-menu #menu="matMenu">
+			<button
         mat-menu-item
         *ngFor="let lang of availableLanguages"
         (click)="setLang(lang)"
@@ -21,22 +20,21 @@
         <span>{{ lang.name }}</span>
       </button>
 
-			</mat-menu>
-			<mat-menu #color="matMenu">
+		</mat-menu>
+		<mat-menu #color="matMenu">
 
-				<button mat-mini-fab >
+			<button mat-mini-fab >
     <mat-icon>check_circle</mat-icon>
   </button>
-				<button mat-mini-fab >
+			<button mat-mini-fab >
     <mat-icon>check_circle</mat-icon>
   </button>
-				<button mat-mini-fab>
+			<button mat-mini-fab>
     <mat-icon>check_circle</mat-icon>
   </button>
 
-			</mat-menu>
-			<ng-content select=".addition-items-append"></ng-content>
+		</mat-menu>
+		<ng-content select=".addition-items-append"></ng-content>
 
-		</mat-toolbar-row>
-	</mat-toolbar>
-</div>
+	</mat-toolbar-row>
+</mat-toolbar>
