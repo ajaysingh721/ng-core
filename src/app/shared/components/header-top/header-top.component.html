@@ -3,7 +3,7 @@
 		<img [attr.src]="logo" height="50px" />
 		<span fxFlex></span>
 		<ng-content select=".addition-items-prepend"></ng-content>
-		<button mat-button [matMenuTriggerFor]="color">
+		<button mat-button [matMenuTriggerFor]="menu">
       <span class="flag-icon {{ currentLanguage.flag }} mr-05"></span>
       <span>{{ currentLanguage.name }}</span>
     </button>
@@ -22,17 +22,14 @@
 
 		</mat-menu>
 		<mat-menu #color="matMenu">
-
-			<button mat-mini-fab >
+			<ng-template matMenuContent>
+				<button mat-mini-fab >
     <mat-icon>check_circle</mat-icon>
   </button>
-			<button mat-mini-fab >
+				<button mat-mini-fab >
     <mat-icon>check_circle</mat-icon>
   </button>
-			<button mat-mini-fab>
-    <mat-icon>check_circle</mat-icon>
-  </button>
-
+			</ng-template>
 		</mat-menu>
 		<ng-content select=".addition-items-append"></ng-content>
 
