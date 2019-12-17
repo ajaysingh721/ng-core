@@ -1,3 +1,4 @@
+<div fxLayout="column" fxFlexFill>
 <app-header-top>
 	<div class="addition-items-prepend">
 		<div class="menu-bar" fxShow="true" fxHide.lt-md>
@@ -64,5 +65,6 @@
     </button>
 	</div>
 </app-header-top>
-<app-sidenav-side [sideNavItems]="sideNavItems"></app-sidenav-side>
+<app-sidenav-side fxFlex [sideNavItems]="sideNavItems"></app-sidenav-side>
 <app-footer></app-footer>
+</div>

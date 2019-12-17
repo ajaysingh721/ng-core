@@ -295,7 +295,6 @@ $web-theme: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
   }
   .mat-sidenav-container {
     background-color: white !important;
-    height: 100vh;
 
     .mat-sidenav-content {
       display: flex;
