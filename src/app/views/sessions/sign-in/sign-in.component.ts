@@ -26,7 +26,7 @@ export class SignInComponent implements OnInit {
   ngOnInit() {
     this.signinForm = this.fb.group({
       username: ["703254673", Validators.required],
-      password: ["password", Validators.required],
+      password: ["", Validators.required],
       rememberMe: [false]
     });
     this.themeService.theme$.subscribe(res => {
