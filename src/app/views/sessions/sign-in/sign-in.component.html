@@ -2,9 +2,9 @@
 	<div class="">
 		<mat-card>
 			<mat-card-content>
-				<div fxLayout="row">
+				<div fxLayout="row wrap" fxLayoutGap="10px">
 
-					<div fxLayout="column" fxLayoutAlign="space-around center" class="m-1">
+					<div fxLayout="column" fxLayoutAlign="space-around center">
 						<div>
 							<img [ngClass.xs]="hidden" src="https://www.chasecooper.com/wp-content/uploads/2016/12/logo-accelerate.jpg"  height="50px"/>
             </div>
@@ -13,7 +13,7 @@
 								<img [ngClass.xs]="hidden" height="50px" width="228px" src="https://www.chasecooper.com/wp-content/themes/chasecooper/assets/images/chasecooper.png"/>
             </div>
 							</div>
-							<mat-divider ngClass.xs="hidden" [vertical]="true"></mat-divider>
+							<mat-divider ngClass.xs="hide" [vertical]="true"></mat-divider>
 							<div class="m-1">
 								<form [formGroup]="signinForm" (ngSubmit)="signin()" style="width:228px">
 									<div class="">
