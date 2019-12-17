@@ -1,11 +1,7 @@
-<div class="fixed-height">
-	<div fxLayout="column" fxLayoutAlign="start" fxFlexFill>
-		<app-header-top> </app-header-top>
-		<div fxLayout="row" fxLayoutAlign="center center" class="bg-image" fxFlex="">
-			<router-outlet></router-outlet>
-		</div>
-	</div>
-	<div fxLayout="column" fxLayoutAlign="end">
-		<app-footer></app-footer>
-	</div>
+<div fxLayout="column" fxFlexFill>
+    <app-header-top></app-header-top> 
+    <div fxFlex>
+        <router-outlet></router-outlet>
+    </div>
+    <app-footer></app-footer> 
 </div>
