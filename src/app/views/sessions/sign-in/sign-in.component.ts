@@ -24,6 +24,7 @@ export class SignInComponent implements OnInit {
   timedOut = false;
   lastPing?: Date = null;
   result: string = "";
+  dialogRef: MatDialogRef<DialogComponent>;
 
   constructor(
     private fb: FormBuilder,
@@ -32,8 +33,19 @@ export class SignInComponent implements OnInit {
     private sessionService: SessionService,
     private dialog: MatDialog,
     private idle: Idle,
-    private keepalive: Keepalive // private dialogRef: MatDialogRef<DialogComponent>
-  ) {
+    private keepalive: Keepalive
+  ) {}
+
+  ngOnInit() {
+    this.signinForm = this.fb.group({
+      username: ["703254673", Validators.required],
+      password: ["", Validators.required],
+      rememberMe: [false]
+    });
+    this.themeService.theme$.subscribe(res => {
+      this.user = res.user;
+    });
+
     this.idle.setIdle(5);
     // sets a timeout period of 5 seconds. after 10 seconds of inactivity, the user will be considered timed out.
     this.idle.setTimeout(5);
@@ -46,7 +58,7 @@ export class SignInComponent implements OnInit {
     });
 
     this.idle.onTimeout.subscribe(() => {
-      //this.dialogRef.close();
+      this.dialogRef.close(false);
       this.idleState = "Timed out!";
       this.timedOut = true;
       console.log(this.idleState);
@@ -74,17 +86,6 @@ export class SignInComponent implements OnInit {
       } else {
         this.idle.stop();
       }
-    });
-  }
-
-  ngOnInit() {
-    this.signinForm = this.fb.group({
-      username: ["703254673", Validators.required],
-      password: ["", Validators.required],
-      rememberMe: [false]
-    });
-    this.themeService.theme$.subscribe(res => {
-      this.user = res.user;
     });
   }
 
@@ -131,11 +132,11 @@ export class SignInComponent implements OnInit {
       yesButtonName: "Skip now"
     };
 
-    const dialogRef = this.dialog.open(DialogComponent, {
-      width: "50%",
+    this.dialogRef = this.dialog.open(DialogComponent, {
+      height: "600px",
+      width: "400px",
       data: dialogData
     });
-
-    dialogRef.afterClosed().subscribe(dialogResult => {});
+    this.dialogRef.afterClosed().subscribe(dialogResult => {});
   }
 }

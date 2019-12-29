@@ -16,7 +16,10 @@ import {
   MatBadgeModule,
   MatDialogModule,
   MatProgressSpinnerModule,
-  MatDividerModule
+  MatDividerModule,
+  MatDialogRef,
+  MAT_DIALOG_DATA,
+  MAT_DIALOG_DEFAULT_OPTIONS
 } from "@angular/material";
 import { MatListModule } from "@angular/material/list";
 
@@ -38,6 +41,9 @@ import { MatListModule } from "@angular/material/list";
     MatBadgeModule,
     MatDialogModule,
     MatProgressSpinnerModule
+  ],
+  providers: [
+    { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: true } }
   ]
 })
 export class SharedMatModule {}
