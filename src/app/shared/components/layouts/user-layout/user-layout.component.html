@@ -1,9 +1,8 @@
-<div class="fixed-height">
-	<div fxLayout="column" fxLayoutAlign="start" fxFlexFill>
-		<app-header-top>
-			<div class="addition-items-prepend">
-				<div class="menu-bar" fxShow="true" fxHide.lt-md>
-					<span *ngFor="let item of navItems">
+<div fxLayout="column" fxFlexFill>
+<app-header-top>
+	<div class="addition-items-prepend">
+		<div class="menu-bar" fxShow="true" fxHide.lt-md>
+			<span *ngFor="let item of navItems">
             <!-- Handle branch node buttons here -->
             <span *ngIf="item.children && item.children.length > 0">
               <button
@@ -16,47 +15,47 @@
               </button>
               <app-menu-item #menu [items]="item.children"></app-menu-item>
             </span>
-					<!-- Leaf node buttons here -->
-					<span *ngIf="!item.children || item.children.length === 0">
+			<!-- Leaf node buttons here -->
+			<span *ngIf="!item.children || item.children.length === 0">
               <button mat-button color="primary" [routerLink]="item.route">
                 {{ item.displayName }}
               </button>
             </span>
-					</span>
-				</div>
-			</div>
-			<div class="addition-items-append">
-				<button mat-icon-button [matMenuTriggerFor]="notification">
+			</span>
+		</div>
+	</div>
+	<div class="addition-items-append">
+		<button mat-icon-button [matMenuTriggerFor]="notification">
               <mat-icon matBadge="15" matBadgeColor="accent">notifications</mat-icon>
           </button>
-				<mat-menu #notification="matMenu">
-					<ng-template matMenuContent>
-						<button mat-menu-item>
+		<mat-menu #notification="matMenu">
+			<ng-template matMenuContent>
+				<button mat-menu-item>
               <mat-icon>mail</mat-icon>
               <span>8 Email received</span>
             </button>
-						<button mat-menu-item>
+				<button mat-menu-item>
               <mat-icon>settings</mat-icon>
               <span>2 Configuration changed by Admin </span>
             </button>
-					</ng-template>
-				</mat-menu>
-				<mat-menu #appMenu="matMenu">
-					<ng-template matMenuContent>
-						<button mat-menu-item>
+			</ng-template>
+		</mat-menu>
+		<mat-menu #appMenu="matMenu">
+			<ng-template matMenuContent>
+				<button mat-menu-item>
               <mat-icon>notifications_off</mat-icon>
               <span>Notification</span>
             </button>
-						<button mat-menu-item>
+				<button mat-menu-item>
               <mat-icon>logout</mat-icon>
               <span [routerLink]="['']" skipLocationChange>Sign Out</span>
             </button>
-					</ng-template>
-				</mat-menu>
-				<button mat-icon-button [matMenuTriggerFor]="appMenu">
+			</ng-template>
+		</mat-menu>
+		<button mat-icon-button [matMenuTriggerFor]="appMenu">
           <mat-icon>account_circle</mat-icon>
         </button>
-				<button
+		<button
       mat-icon-button
       (click)="navService.toggle()"
       fxShow="true"
@@ -64,14 +63,8 @@
     >
       <mat-icon>menu</mat-icon>
     </button>
-			</div>
-		</app-header-top>
-		<div fxLayout="row" fxLayoutAlign="" fxFlex="">
-			<div class="light-theme">
-				<app-sidenav-side [sideNavItems]="sideNavItems"></app-sidenav-side>
-			</div>
-		</div>
-		<div fxLayout="column" fxLayoutAlign="end">
-			<app-footer></app-footer>
-		</div>
 	</div>
+</app-header-top>
+<app-sidenav-side fxFlex [sideNavItems]="sideNavItems"></app-sidenav-side>
+<app-footer></app-footer>
+</div>

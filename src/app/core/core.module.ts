@@ -10,6 +10,8 @@ import { AuthGuard } from "./guards/auth.guard";
 import { AdminGuard } from "./guards/admin.guard";
 import { NavService } from "./services/nav.service";
 import { SessionService } from "./services/session.service";
+import { LoaderInterceptor } from "./interceptors/loader.interceptor";
+import { LoaderService } from "./services/loader.service";
 
 @NgModule({
   providers: [
@@ -30,11 +32,17 @@ import { SessionService } from "./services/session.service";
     //   useClass: ErrorInterceptor,
     //   multi: true
     // },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoaderInterceptor,
+      multi: true
+    },
     AuthGuard,
     AdminGuard,
     ThemeService,
     NavService,
-    SessionService
+    SessionService,
+    LoaderService
   ]
 })
 export class CoreModule {}

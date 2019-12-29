@@ -12,8 +12,7 @@ import { DialogComponent } from "src/app/shared/components/dialog/dialog.compone
 
 @Component({
   selector: "app-sign-in",
-  templateUrl: "./sign-in.component.html",
-  styleUrls: ["./sign-in.component.scss"]
+  templateUrl: "./sign-in.component.html"
 })
 export class SignInComponent implements OnInit {
   // @ViewChild(MatProgressBar, { static: false }) progressBar: MatProgressBar;
@@ -80,7 +79,7 @@ export class SignInComponent implements OnInit {
 
   ngOnInit() {
     this.signinForm = this.fb.group({
-      username: ["", Validators.required],
+      username: ["703254673", Validators.required],
       password: ["", Validators.required],
       rememberMe: [false]
     });

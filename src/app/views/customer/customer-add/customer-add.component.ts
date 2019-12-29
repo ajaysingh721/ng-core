@@ -1,5 +1,11 @@
 import { Control } from "./../../../models/control.model";
-import { Component, OnInit } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  ElementRef,
+  ViewChild,
+  Renderer2
+} from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { Observable } from "rxjs";
 import { FormlyFieldConfig } from "@ngx-formly/core";
@@ -17,7 +23,6 @@ export class CustomerAddComponent implements OnInit {
   customers: Observable<Customer[]>;
   formFields: FormlyFieldConfig[];
   formModels: { email: ""; password: "" };
-
   constructor(
     private apiService: APIService<Control>,
     private toFormlyField: ToFormlyFieldPipe,

@@ -1,5 +1,5 @@
-<div class="mat-app-background">
-	<div [class]="(theme$ | async).theme">
+<div fxLayout="column" fxFlexFill class="mat-app-background">
+	<div fxFlex [class]="(theme$ | async).theme">
 		<router-outlet></router-outlet>
 	</div>
 </div>

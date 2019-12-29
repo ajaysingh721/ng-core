@@ -14,7 +14,9 @@ import {
   MatSelectModule,
   MatSidenavModule,
   MatBadgeModule,
-  MatDialogModule
+  MatDialogModule,
+  MatProgressSpinnerModule,
+  MatDividerModule
 } from "@angular/material";
 import { MatListModule } from "@angular/material/list";
 
@@ -34,7 +36,8 @@ import { MatListModule } from "@angular/material/list";
     MatSidenavModule,
     MatListModule,
     MatBadgeModule,
-    MatDialogModule
+    MatDialogModule,
+    MatProgressSpinnerModule
   ]
 })
 export class SharedMatModule {}
