@@ -20,6 +20,7 @@
   }
   .mat-sidenav-container {
     background-color: white !important;
+    height: 100vh;
 
     .mat-sidenav-content {
       display: flex;
@@ -215,7 +216,7 @@
   // Theme Config
 
   body {
-    --primary-color: #0e486f;
+    --primary-color: #1c9dd9;
     --primary-lighter-color: #bbe2f4;
     --primary-darker-color: #1181ca;
     --text-primary-color: #{$light-primary-text};
@@ -224,10 +225,10 @@
   }
 
   $mat-primary: (
-    main: #0e486f,
+    main: #1c9dd9,
     lighter: #bbe2f4,
-    darker: #283a46,
-    200: #9fb9c4,
+    darker: #1181ca,
+    200: #1c9dd9,
     // For slide toggle,
       contrast:
       (
@@ -247,32 +248,29 @@
     --text-accent-darker-color: #{$dark-primary-text};
   }
 
-  // Dark Theme text
-  $light-text: #ffffff;
-  $light-primary-text: $light-text;
-  $light-accent-text: rgba($light-primary-text, 0.7);
-  $light-disabled-text: rgba($light-primary-text, 0.5);
-  $light-dividers: rgba($light-primary-text, 0.12);
-  $light-focused: rgba($light-primary-text, 0.12);
-
-  $mat-dark-theme-foreground: (
-    base: $light-text,
-    divider: $light-dividers,
-    dividers: $light-dividers,
-    disabled: $light-disabled-text,
-    disabled-button: rgba($light-text, 0.3),
-    disabled-text: $light-disabled-text,
-    elevation: black,
-    hint-text: $light-disabled-text,
-    secondary-text: $light-accent-text,
-    accent-text: $light-accent-text,
-    icon: $light-text,
-    icons: $light-text,
-    text: $light-text,
-    slider-min: $light-text,
-    slider-off: rgba($light-text, 0.3),
-    slider-off-active: rgba($light-text, 0.3)
+  $mat-accent: (
+    main: #fbcd14,
+    lighter: #fef0b9,
+    darker: #f9ba0b,
+    200: #fbcd14,
+    // For slide toggle,
+      contrast:
+      (
+        main: $dark-primary-text,
+        lighter: $dark-primary-text,
+        darker: $dark-primary-text
+      )
   );
+  $theme-accent: mat-palette($mat-accent, main, lighter, darker);
+
+  body {
+    --warn-color: #cf001a;
+    --warn-lighter-color: #f1b3ba;
+    --warn-darker-color: #bd000f;
+    --text-warn-color: #{$light-primary-text};
+    --text-warn-lighter-color: #{$dark-primary-text};
+    --text-warn-darker-color: #{$light-primary-text};
+  }
 
   $mat-warn: (
     main: #cf001a,
@@ -290,7 +288,9 @@
   $theme-warn: mat-palette($mat-warn, main, lighter, darker);
 
   $web-theme: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
-  @include angular-material-theme($web-theme);
+  .light-theme {
+    @include angular-material-theme($web-theme);
+  }
   $altTheme: mat-dark-theme($theme-primary, $theme-accent, $theme-warn);
 
   //Theme Init
@@ -303,6 +303,7 @@
   }
   .mat-sidenav-container {
     background-color: white !important;
+    height: 100vh;
 
     .mat-sidenav-content {
       display: flex;
