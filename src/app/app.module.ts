@@ -15,6 +15,9 @@ import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 
 import { InMemoryDataModule } from "./shared/inmemory-db/inmemory-db.module";
+import { NgIdleKeepaliveModule } from "@ng-idle/keepalive";
+import { DialogComponent } from "./shared/components/dialog/dialog.component";
+import { MatDialogRef, MAT_DIALOG_DEFAULT_OPTIONS } from "@angular/material";
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -38,7 +41,8 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
     }),
     HttpClientModule,
-    InMemoryDataModule
+    InMemoryDataModule,
+    NgIdleKeepaliveModule.forRoot()
   ],
 
   providers: [],

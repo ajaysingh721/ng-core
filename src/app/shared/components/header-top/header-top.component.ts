@@ -34,7 +34,6 @@ export class HeaderTopComponent implements OnInit {
   ngOnInit() {
     this.themeService.theme$.subscribe(res => {
       this.logo = res.logo;
-      debugger;
     });
   }
 

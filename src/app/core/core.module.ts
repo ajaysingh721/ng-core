@@ -9,6 +9,7 @@ import { ErrorInterceptor } from "./interceptors/error.interceptor";
 import { AuthGuard } from "./guards/auth.guard";
 import { AdminGuard } from "./guards/admin.guard";
 import { NavService } from "./services/nav.service";
+import { SessionService } from "./services/session.service";
 
 @NgModule({
   providers: [
@@ -32,7 +33,8 @@ import { NavService } from "./services/nav.service";
     AuthGuard,
     AdminGuard,
     ThemeService,
-    NavService
+    NavService,
+    SessionService
   ]
 })
 export class CoreModule {}

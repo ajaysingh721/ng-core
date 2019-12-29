@@ -14,7 +14,7 @@ import {
 @Injectable()
 export class ThemeService {
   theme: Theme;
-  private _theme: BehaviorSubject<any> = new BehaviorSubject<any>(null);
+  private _theme: BehaviorSubject<any> = new BehaviorSubject<any>({});
   theme$ = this._theme.asObservable();
 
   constructor(

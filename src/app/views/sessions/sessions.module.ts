@@ -10,6 +10,8 @@ import { ResetPasswordComponent } from "./reset-password/reset-password.componen
 import { RegisterComponent } from "./register/register.component";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { TranslateModule } from "@ngx-translate/core";
+import { DialogComponent } from "src/app/shared/components/dialog/dialog.component";
+import { MatDialogRef } from "@angular/material";
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import { TranslateModule } from "@ngx-translate/core";
     ReactiveFormsModule,
     FlexLayoutModule,
     TranslateModule
-  ]
+  ],
+  entryComponents: [DialogComponent]
 })
 export class SessionsModule {}

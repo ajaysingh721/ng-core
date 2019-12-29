@@ -1,13 +1,13 @@
-.full-width{
+.full-width {
   width: 100%;
 }
 
-.mb-1{
-  margin-bottom: 1rem!important;
+.mb-1 {
+  margin-bottom: 1rem !important;
 }
 
-.text-center{
-  text-align:center;
+.text-center {
+  text-align: center;
 }
 
 .session-signin-progress {
@@ -23,7 +23,7 @@
   max-width: 400px;
 }
 .session-signin-form-hold > .mat-card {
-  margin: 0;    
+  margin: 0;
   font-size: 12px;
 }
 .session-lockout {
@@ -39,19 +39,21 @@
   max-width: 72px;
   max-height: 72px;
   border-radius: 50%;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 .text-muted {
-    color: #6c757d!important;
+  color: #6c757d !important;
 }
 
-a, a:focus, a:hover {
-    cursor: pointer;
-    text-decoration: none;
-    outline: 0;
-    color: #fff;
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  text-decoration: none;
+  outline: 0;
+  color: #fff;
 }
-.ml-15{
-margin-left: 15rem;
+.ml-15 {
+  margin-left: 15rem;
 }
