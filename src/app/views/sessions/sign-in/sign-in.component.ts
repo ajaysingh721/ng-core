@@ -72,6 +72,12 @@ export class SignInComponent implements OnInit {
     });
     this.idle.onTimeoutWarning.subscribe(countdown => {
       this.idleState = "You will time out in " + countdown + " seconds!";
+      this.dialogRef.componentInstance.data = {
+        body: this.idleState,
+        title: "Session timeout warning !",
+        noButtonName: "Stay alive",
+        yesButtonName: "Skip now"
+      };
       console.log(this.idleState);
     });
     // sets the ping interval to 15 seconds
